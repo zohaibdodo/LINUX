@@ -1,0 +1,5 @@
+YUM lock release:
+
+ps -ef | grep yum
+
+kill -9 pid
