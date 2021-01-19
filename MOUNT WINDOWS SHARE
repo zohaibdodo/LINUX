@@ -1,12 +1,11 @@
 On prompt execute this command.
 
-	1. #mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user=zohaib.ahmed,password=password,domain=samba.com.pk
-	2. #vi /etc/bash
-	3. Paste mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user=zohaib.ahmed,password=jojo#123,domain=samba.com.pk in /etc/bash file
-	4. #exec bash
+1. #mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user=zohaib.ahmed,password=password,domain=samba.com.pk
+2. #vi /etc/bash
+3. Paste mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user=zohaib.ahmed,password=jojo#123,domain=samba.com.pk in /etc/bash file
+4. #exec bash
 
-
-	• Install samba-client & CIFS Utility:
+• Install samba-client & CIFS Utility:
 
 yum install samba-client samba-common cifs-utils
 
