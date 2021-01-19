@@ -1,0 +1,23 @@
+#Pull changes from the remote folder to the local folder
+#http://winscp.net/eng/docs/scriptcommand_synchronize
+ 
+#open a connection to the server using a saved winscp session
+open sftp://root:janu#786@10.21.10.70
+
+#change local directory 
+lcd "D:\CALLS BACKUP\PrimaryHO"
+
+#change remote directory 
+cd /var/spool/asterisk/monitor
+
+# transfer mode 
+option transfer binary
+ 
+# Synchronize recording folder, pulling changes from the remote to the local
+synchronize local "D:\CALLS BACKUP\PrimaryHO" "/var/spool/asterisk/monitor/"
+ 
+#close the session
+close
+ 
+#exit the scripting environment
+exit
