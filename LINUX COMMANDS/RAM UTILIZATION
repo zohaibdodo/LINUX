@@ -1,0 +1,12 @@
+To check RAM utilization in Linux:
+
+#free -g                                 #For result in gigabyte
+#free -m                                #For result in megabyte
+
+#top                                      Capital E to toggle b/w GB, MB, KB
+
+#htop
+
+#nano /proc/meminfo
+
+#vmstat
