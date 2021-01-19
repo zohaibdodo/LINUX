@@ -1,0 +1,37 @@
+#!bin/bash
+ 
+####################### GLOBAL VARIABLES #################################
+VAR=/root/script/
+VAR_FOLDER=NOFOLDER
+VAR_FILES_COUNT=0
+####################### File Check Funcation #############################
+ 
+file_check(){
+ 
+cd $VAR$VAR_FOLDER/                                      ### Change to /script/YOUR_SPECIFIED_FOLDER Folder
+VAR_FILES_COUNT=0                                        ### Initialize Count = 0, to remove previous values
+VAR_FILES_COUNT=`ls -al $VAR$VAR_FOLDER/ | wc -l`        ### Count Files in folder
+if [[ $VAR_FILES_COUNT -gt 3 ]]                          ### If total number of lines greater than 3
+then
+rasterisk -rx "channel originate SIP/1047 extension 03222995727@from-internal"
+rm -rf *
+fi
+}
+ 
+##############################################################################
+VAR_FOLDER=filecheck
+file_check
+
+
+# nano /etc/crontab
+
+* * * * * root /root/script/callingscript.sh
+
+
+SSH KEY
+
+Put below key 
+
+#vi /root/.ssh/authorized_keys
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7gtChYGTT+0CW2NRZg7mZE7yPIdkZUMg4dwM6/XM6H7/01R6XXbj2QKdeZ2lyGac4XzkoRYe1weMU49eMcOWa1nCydZfkcfASkzIjj9LpwxU2tXm2OcOx1sp+Fy8qgwU7zwDb3M2NRnAgndR1W4oM0fV6YWawGVXep1jZ4O2b7JfI4JP/LvjBdfJDygE8hAZikv2VXmuw77JVXGFK2eZnZA3rFp3XpYY9kYmvggLHARX+M/TxP3TgrG7sndVy2xrhpFzOHVXRaZzqs7+bfqnaQy8tay/3bvK5yRUiQZJU14a9zmcG0q4gHhIn/JnhphXXiOdg7QHw45ISw3x3fCb1 root@mqwas_7v
