@@ -1,0 +1,16 @@
+To format USB first unmount /dev/sdX
+
+For partitioning :
+
+Fdsik /dev/sdX
+
+To delete partitions:
+Type "d"
+To create new partitions:
+Type "n"
+To write partitions:
+W
+
+# mkfs.ntfs /dev/sdXn
+
+From <https://tecadmin.net/format-usb-in-linux/>
