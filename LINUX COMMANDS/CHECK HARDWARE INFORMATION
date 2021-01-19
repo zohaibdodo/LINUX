@@ -1,0 +1,16 @@
+dmidecode 
+
+From <https://serverfault.com/questions/48642/how-to-find-out-details-about-hardware-on-the-linux-machine> 
+
+
+To check 
+
+
+Display Hard Disk Partition Size in Mega bytes or GB or TB
+
+
+#df -h or df -hT
+
+Display TOTAL Hard Disk Size
+
+fdisk -l | grep Disk
