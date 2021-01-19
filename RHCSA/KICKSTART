@@ -1,0 +1,27 @@
+Install 
+#yum install system-config-kickstart ( For Kickstart)
+ 
+#system install pykickstart  (For Ksvalidator)
+
+
+Input all the parameters in Kickstart Configurator
+Basic Configuration
+Installation method
+Boot loader options
+Partition Information
+Network Configuration
+Etc
+Etc
+
+Then safe that file with any name like Unattended.cfg file
+
+Now copy packages which are required during installation from GUI machine or may be CLI machine:
+#vi /root/anaconda-ks.cfg
+
+	• Paste in unattended.cfg file after partitions tab
+
+To verify KickStart file:
+
+#ksvalidator Unattended.cfg
+
+pykickstart RPM provides ksvalidator
