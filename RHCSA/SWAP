@@ -1,0 +1,33 @@
+1. Create a partition  for swap:
+
+#fdisk / gdisk
+
+	• Press n ---------- for new partition
+	• Select partition number
+	• Size for the partition
+	• Define partition type.
+	• Press w
+
+Format partition for swap:
+
+#mkswap /dev/sdb1
+
+Setup Swap on Partition:
+
+#swapon /dev/sdb1
+
+To verify Swap:
+
+#swapon -s
+
+2. To remove swap partition:
+
+#swapoff /dev/sda4
+
+3. To create Swap from file:
+
+#dd if=/dev/zero of=/pagefile bs=1M count=213
+
+#mkswap /pagefile
+
+#swapon /pagefile
