@@ -1,0 +1,69 @@
+Google Chrome
+
+#sudo apt update
+
+#sudo apt upgrade
+
+#sudo apt install wget         (If Required
+
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+#sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+#google-chrome
+
+Visual Studio Code
+
+#sudo snap install code –classic
+
+GIT
+
+https://github.com/shiftkey/desktop
+
+To setup the package repository, run these commands:
+# wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
+
+# sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
+
+# sudo apt-get update
+
+Then install GitHub Desktop: 
+# sudo apt install github-desktop -y
+
+OneNote/P3X for Ubuntu
+
+##sudo snap install p3x-onenote
+
+Telegram
+
+#sudo snap install telegram-desktop
+
+VLC Player
+
+#sudo snap install vlc
+
+Docker for Ubuntu
+
+$ sudo apt-get update
+
+
+$ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent    software-properties-common
+$curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+$sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release-cs) stable"
+$sudo apt-get update
+$sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+Anyconnect
+
+Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf610d8ca257732dd4bcb9b
+
+#tar -xvf anyconnect-linux64-4.9.00086-predeploy-k9.tar.gz 
+#cd anyconnect-linux64-4.9.00086/
+#cd vpn/
+#sudo sh vpn_install.sh
+
+Wireshark
+
+#sudo apt install wireshark
+#sudo usermod -aG wireshark $(whoami)
