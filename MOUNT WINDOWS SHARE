@@ -1,0 +1,41 @@
+On prompt execute this command.
+
+	1. #mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user=zohaib.ahmed,password=password,domain=samba.com.pk
+	2. #vi /etc/bash
+	3. Paste mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user=zohaib.ahmed,password=jojo#123,domain=samba.com.pk in /etc/bash file
+	4. #exec bash
+
+
+	• Install samba-client & CIFS Utility:
+
+yum install samba-client samba-common cifs-utils
+
+mkdir /mnt/san
+
+Commands:
+To edit Fstab:
+nano /etc/fstab
+
+10.21.23.44:/callsbackup/PrimaryHO /mnt/san            cifs    username=service.recording,password=AER#SDFgtr1367AGT#QDHdef1257       0 0
+
+To mount Windows Share:
+mount -a
+
+To Unmount:
+
+umount -f -a -t cifs -l san
+
+To remove folder:
+
+rm -rf FOLDER_NAME
+
+Troubleshooting:
+
+Run command df -h
+
+If there is any space in the server path, you need to replace it by \040, for example //servername/My\040Documents
+
+
+
+Centos 6
+\\10.21.23.44\callsbackup\KHI_71 /mnt/san cifs _netdev,username=service.recording,password=AER#SDFgtr1367AGT#QDHdef1257,domain=samba.com.pk 0 0
