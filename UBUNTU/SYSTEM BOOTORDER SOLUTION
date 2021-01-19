@@ -1,0 +1,5 @@
+cd /boot/efi/EFI
+    2  mv BOOT BOOT_bak
+    3  cp -R ubuntu BOOT
+    4  cd BOOT
+    5  mv shimx64.efi bootx64.efi
