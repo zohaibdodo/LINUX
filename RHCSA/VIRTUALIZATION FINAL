@@ -1,0 +1,15 @@
+To check your CPU is VT enabled or not
+#grep vmx /proc/cpuinfo
+
+To check KVM module is installed on machine or not
+#lsmod | grep kvm
+
+Packages to Install KVM
+#yum install libvirt qemu-kvm virt-manager -y
+
+To mount ISO in KVM directoy:
+#var/lib/libvirt/ISO
+
+Tools to convert VMdk 
+#yum search p2v
+#yum search v2v
