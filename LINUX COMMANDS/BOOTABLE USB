@@ -1,0 +1,3 @@
+#dd bs=4M if=/home/sana/Downloads/ubuntu-18.04.2-live-server-amd64.iso of=/dev/sdb1 status=progress oflag=sync
+
+From <https://vitux.com/how-to-create-a-bootable-usb-stick-from-the-ubuntu-terminal/> 
