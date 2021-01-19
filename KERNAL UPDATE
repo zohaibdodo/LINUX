@@ -1,0 +1,9 @@
+https://phoenixnap.com/kb/how-to-upgrade-kernel-centos   
+	For ELRepo (ELRepo Project focuses on hardware related packages)
+	• http://elrepo.org/tiki/tiki-index.php
+	ELRepo Project focuses on hardware related packages
+	
+
+Kpatch Live patch
+
+http://jensd.be/651/linux/linux-live-kernel-patching-with-kpatch-on-centos-7
