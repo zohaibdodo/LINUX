@@ -1,0 +1,31 @@
+Collect and package diagnostic and support data.
+
+#sosreport
+
+Enter case ID if you already have.
+
+Report location:
+
+#cd /var/tmp/
+
+
+XSOS
+A tool for sysadmins and support techs 
+
+To install XSOS:
+
+#rpm -ivh xsos.rpm
+
+To view sosreport:
+
+Un XZ:
+
+#unxz sosreport-rhelgui….tar.xz
+
+To extract:
+
+#tar -xf sosreport-rhelgui……tar
+
+Now run
+
+#xsos sosreport……
