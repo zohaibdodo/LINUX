@@ -1,0 +1,21 @@
+First of all set following things on Linux workstation/server
+
+	• Set IP address
+	• Set hostname
+	• Set DNS
+	• Set Search Domain
+	
+
+
+
+By running Realm discover command it will show the discovery 
+
+#realm -v discover zohaib.lab
+
+Check the following packages:
+
+	• Oddjob
+	• Oddjob-mkhomedir
+	• Sssd
+	• Adcli
+	• Samba-common-tools
