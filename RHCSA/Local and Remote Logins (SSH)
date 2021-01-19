@@ -1,0 +1,20 @@
+Linux to Linux:
+
+To generate SSH key:
+
+#ssh-keygen
+
+To copy ssh public key to other system:
+
+#ssh-copy-id root@192.168.111.8
+
+Windows to Linux:
+
+	• Generate SSH Key by Putty Key-gen.
+	• Now copy & paste public key to linux system.
+	• Remove spaces after pasting into linux system.
+		○ Press end button & then delete button.
+
+	• Copy ssh public key to user OR root profile in following location
+
+#vi /etc/root/.ssh/authorized_keys OR #vi /home/student/.ssh/authorized_keys
