@@ -1,0 +1,9 @@
+Check who is logged in
+Code:
+last |grep "logged in"
+Check <PID> for this user
+Code:
+ps -aux | grep ssh | grep pts/0
+Kill SSH user
+
+kill -9 <PID>
