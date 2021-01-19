@@ -1,0 +1,7 @@
+1) Add physical hard drive
+2) Create PV
+    a. #pvcreate /dev/sdX /dev/sdX
+3) Create VG
+	a. #vgcreate VG(Name of VG) PV(/dev/sdX)
+4) Create LV
+#lvcreate 
