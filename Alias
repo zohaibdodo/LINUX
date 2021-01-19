@@ -1,0 +1,9 @@
+#alias chunari=date
+
+To check date just simply type chunari
+
+#chunari
+
+Remove Alias:
+
+#unalias chunari
