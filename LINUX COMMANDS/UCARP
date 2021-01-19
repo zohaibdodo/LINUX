@@ -1,0 +1,57 @@
+Primary Server
+
+#The number (from 001 to 255) in the name of the file is the identifier ID=001
+#Network Interface
+BIND_INTERFACE="eth7"
+#Physical IP
+SOURCE_ADDRESS="10.23.200.4"
+#Virtual IP
+VIP_ADDRESS="10.23.200.6"
+#Carp Password
+PASSWORD="abc123"
+#Other Options, see documentation for more information
+OPTIONS="-k 1 -P --shutdown --preempt"
+
+Secondary Server
+
+#The number (from 001 to 255) in the name of the file is the identifier ID=001
+#Network Interface
+BIND_INTERFACE="eth3"
+#Physical IP
+SOURCE_ADDRESS="10.23.200.5"
+#Virtual IP
+VIP_ADDRESS="10.23.200.6"
+#Carp Password
+PASSWORD="abc123"
+#Other Options, see documentation for more information
+OPTIONS="-k 10 --shutdown --preempt"
+
+UCARP TREASURY
+Primary
+
+#The number (from 001 to 255) in the name of the file is the identifier ID=001
+#Network Interface
+BIND_INTERFACE="eth2"
+#Physical IP
+SOURCE_ADDRESS="10.23.202.20"
+#Virtual IP
+VIP_ADDRESS="10.23.202.22"
+#Carp Password
+PASSWORD="abc123"
+#Other Options, see documentation for more information
+OPTIONS="-k 1 -P --shutdown --preempt"
+
+
+Secondary
+
+#The number (from 001 to 255) in the name of the file is the identifier ID=001
+#Network Interface
+BIND_INTERFACE="eth2"
+#Physical IP
+SOURCE_ADDRESS="10.23.202.21"
+#Virtual IP
+VIP_ADDRESS="10.23.202.22"
+#Carp Password
+PASSWORD="abc123"
+#Other Options, see documentation for more information
+OPTIONS="-k 10 --shutdown --preempt"
