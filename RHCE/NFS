@@ -1,0 +1,52 @@
+To verify NFS is installed or not:
+
+#rpm -qa | grep nfs
+
+For Config file:
+
+#ls -l /etc/exports
+
+For Config Directory:
+
+#ls -l /etc/exports.d/
+
+To check ports in firewall
+
+20048, 2049, 111 
+
+#cat /usr/lib/firewalld/services/mountd.xml
+
+	1) Mkdir /private
+	2) Mkdir /public
+
+	3) Chmod 1777 /public
+
+#vi /etc/exports
+
+/public 192.168.10.11/255.255.255.0(rw)
+/public 192.168.10.11(rw,no_root_squash)
+
+To verify:
+
+#showmount -e localhost
+
+#systemctl start nfs-server
+#exportfs -rq
+
+To mount 
+
+#mount 192.168.10.11:/public /mnt 
+
+
+With Directory
+
+#vi /etc/exports.d/myshare.exports
+
+/private *(rw) or *(ro)
+/private 10.0.0.1(rw) 192.168.10.11(ro)
+/private *.domain.com(rw)
+/private server{1..10}.domain.com(rw)
+
+To mount NFS in fstab:
+
+192.168.122.31:/private /mnt/private nfs4 _netdev,defaults 0 0
