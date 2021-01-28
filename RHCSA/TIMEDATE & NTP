@@ -26,7 +26,7 @@ From <https://www.tutorialspoint.com/how-to-set-time-timezone-and-synchronize-sy
 
 #systemctl enable --now chronyd
 
-#vi /etc/chrony/conf
+#vi /etc/chrony.conf
 
 Use public servers for NTP sync:
 
