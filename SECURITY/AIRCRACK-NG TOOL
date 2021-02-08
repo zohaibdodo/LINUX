@@ -1,0 +1,7 @@
+sudo airmon-ng start wlan0
+
+sudo airdump-ng wlan0mon
+
+sudo airdump-ng --bssid mac-address -c ch-number -w location_to_save_captured_file wlan0mon
+
+sudo airplay-ng -0 4 -a mac wlan0mon
