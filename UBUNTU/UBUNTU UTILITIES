@@ -1,51 +1,50 @@
-Google Chrome
+********************Google Chrome**********************
 
 #sudo apt update
-
 #sudo apt upgrade
-
-#sudo apt install wget         (If Required
-
+#sudo apt install wget         (If Required)
 #wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
 #sudo dpkg -i google-chrome-stable_current_amd64.deb
-
 #google-chrome
 
-Visual Studio Code
+****Visual Studio Code****
 
 #sudo snap install code –classic
 
-GIT
+************************GIT***************************
 
 https://github.com/shiftkey/desktop
 
+OLD
+
 To setup the package repository, run these commands:
-# wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
-
+#wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
 # sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
-
 # sudo apt-get update
+
+NEW
+$ wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc > /dev/null
+$ sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
+$ sudo apt-get update
 
 Then install GitHub Desktop: 
 # sudo apt install github-desktop -y
 
-OneNote/P3X for Ubuntu
+******************OneNote/P3X for Ubuntu***************
 
 ##sudo snap install p3x-onenote
 
-Telegram
+**********************Telegram*************************
 
 #sudo snap install telegram-desktop
 
-VLC Player
+**********************VLC Player***********************
 
 #sudo snap install vlc
 
-Docker for Ubuntu
+*********************Docker for Ubuntu*****************
 
 $ sudo apt-get update
-
 
 $ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent    software-properties-common
 $curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -54,7 +53,7 @@ $sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubu
 $sudo apt-get update
 $sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-Anyconnect
+*************************Anyconnect********************
 
 Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf610d8ca257732dd4bcb9b
 
@@ -63,7 +62,7 @@ Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf6
 #cd vpn/
 #sudo sh vpn_install.sh
 
-Wireshark
+*************************Wireshark**********************
 
 #sudo apt install wireshark
 #sudo usermod -aG wireshark $(whoami)
