@@ -1,4 +1,12 @@
-********************Google Chrome**********************
+**************************SSH***************************
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl enable --now ssh
+sudo systemctl status ssh
+
+sudo ufw allow ssh
+
+*********************Google Chrome**********************
 
 #sudo apt update
 #sudo apt upgrade
@@ -7,7 +15,7 @@
 #sudo dpkg -i google-chrome-stable_current_amd64.deb
 #google-chrome
 
-****Visual Studio Code****
+*******************Visual Studio Code******************
 
 #sudo snap install code –classic
 
@@ -46,7 +54,7 @@ $ sudo apt-get update
 $ sudo apt-get update
 
 $ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent    software-properties-common
-$curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 $sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release-cs) stable"
 $sudo apt-get update
@@ -65,3 +73,4 @@ Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf6
 
 #sudo apt install wireshark
 #sudo usermod -aG wireshark $(whoami)
+
