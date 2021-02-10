@@ -1,4 +1,4 @@
-**************************SSH***************************
+***********************************************************************SSH***********************************************************
 sudo apt update
 sudo apt install openssh-server
 sudo systemctl enable --now ssh
@@ -6,7 +6,7 @@ sudo systemctl status ssh
 
 sudo ufw allow ssh
 
-*********************Google Chrome**********************
+********************************************************************Google Chrome****************************************************
 
 #sudo apt update
 #sudo apt upgrade
@@ -14,7 +14,7 @@ sudo ufw allow ssh
 #wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #sudo dpkg -i google-chrome-stable_current_amd64.deb
 #google-chrome
-*******************SNAP STORE**************************
+***********************************************************SNAP STORE**************************
 
 sudo apt install snapd
 sudo snap install snap-store
