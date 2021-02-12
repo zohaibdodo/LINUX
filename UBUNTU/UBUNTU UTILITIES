@@ -14,17 +14,17 @@ sudo ufw allow ssh
 #wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #sudo dpkg -i google-chrome-stable_current_amd64.deb
 #google-chrome
-***********************************************************SNAP STORE**************************
+*********************************************************************SNAP STORE*******************************************************
 
 sudo apt install snapd
 sudo snap install snap-store
 
-*******************Visual Studio Code******************
+*****************************************************************Visual Studio Code***************************************************
 
 sudo apt install snapd
 sudo snap install code --classic
 
-************************GIT***************************
+***********************************************************************GIT**************************************************************
 
 https://github.com/shiftkey/desktop
 
@@ -42,19 +42,19 @@ $ sudo apt-get update
 
 # sudo apt install github-desktop -y
 
-******************OneNote/P3X for Ubuntu***************
+*******************************************************************OneNote/P3X for Ubuntu*************************************************
 
 ##sudo snap install p3x-onenote
 
-**********************Telegram*************************
+*************************************************************************Telegram*********************************************************
 
 #sudo snap install telegram-desktop
 
-**********************VLC Player***********************
+***************************************************************************VLC Player******************************************************
 
 #sudo snap install vlc
 
-*********************Docker for Ubuntu*****************
+***************************************************************************Docker for Ubuntu**************************************************************
 
 $ sudo apt-get update
 
@@ -65,7 +65,7 @@ $sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubu
 $sudo apt-get update
 $sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-*************************Anyconnect********************
+***************************************************************************Anyconnect********************************************************************
 
 Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf610d8ca257732dd4bcb9b
 
@@ -74,11 +74,11 @@ Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf6
 #cd vpn/
 #sudo sh vpn_install.sh
 
-*************************Wireshark**********************
+******************************************************************************Wireshark*******************************************************************
 
 #sudo apt install wireshark
 #sudo usermod -aG wireshark $(whoami)
 
-***************************************************VIDEO DOWNLOADER*************************************************************
+****************************************************************************VIDEO DOWNLOADER*************************************************************
 
 sudo snap install video-downloader
