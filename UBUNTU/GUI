@@ -6,5 +6,4 @@ sudo apt-get install slim -y
 
 sudo tasksel
 
-
 sudo apt-get install ubuntu-desktop
