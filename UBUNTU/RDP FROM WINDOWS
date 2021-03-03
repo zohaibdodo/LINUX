@@ -4,10 +4,4 @@
 
 #sudo ufw allow from any to any port 3389 proto tcp
 
-From <https://linuxconfig.org/ubuntu-20-04-remote-desktop-access-from-windows-10> 
-
-SSH
-
-To install or enable SSH on ubuntu:
-
-#sudo apt install openssh-server
+From <https://linuxconfig.org/ubuntu-20-04-remote-desktop-access-from-windows-10>
