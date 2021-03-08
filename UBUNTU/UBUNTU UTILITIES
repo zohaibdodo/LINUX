@@ -27,21 +27,9 @@ sudo snap install code --classic
 
 ***********************************************************************GIT**************************************************************
 
-https://github.com/shiftkey/desktop
+https://github.com/shiftkey/desktop/releases/download/release-2.6.2-linux1/GitHubDesktop-linux-2.6.2-linux1.deb
 
-OLD
-
-To setup the package repository, run these commands:
-# wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
-# sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
-# sudo apt-get update
-
-NEW
-$ wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc > /dev/null
-$ sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
-$ sudo apt-get update
-
-# sudo apt install github-desktop -y
+sudo dpkg -i GitHubDesktop-linux-2.6.2-linux1.deb
 
 *******************************************************************OneNote/P3X for Ubuntu*************************************************
 
