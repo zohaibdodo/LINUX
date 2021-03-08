@@ -17,6 +17,7 @@ sudo ufw allow ssh
 
 sudo apt install snapd
 sudo snap install snap-store
+systemctl enable --now snapd apparmor
 
 *****************************************************************Visual Studio Code***************************************************
 
