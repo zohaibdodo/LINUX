@@ -1,0 +1,15 @@
+In terminal, run nano /etc/default/grub to edit the grub configuration file.
+
+Easily Change GRUB Boot Order in Kali Linux - Edit GRUB
+
+6. Change GRUB_DEFAULT=0 (around line 6) to equal the number of the Windows operating system in the list found in step 2. In our example, GRUB_DEFAULT=0 becomes GRUB_DEFAULT=6.
+
+Easily Change GRUB Boot Order in Kali Linux - Change Index
+
+7. Save the GRUB file (Ctrl+O and Enter). Exit the file editor (Ctrl+X).
+
+8. Run update-grub to apply the changes.
+
+Easily Change GRUB Boot Order in Kali Linux - update-grub
+
+9. Reboot the machine (reboot).
