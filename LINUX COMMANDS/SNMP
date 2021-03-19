@@ -1,26 +1,14 @@
-How to Install SNMP and Configure the Community String For CentOS 
-Linux Servers 
-Install SNMP
-	1. Install the SNMPD service by running the following command: 
-		○ yum install net-snmp net-snmp-utils
-	2. Once the service is installed, verify that it is set to start at startup by running: 
-		○ CentOS 6: 
-			§ chkconfig snmpd on
-		○ CentOS 7: 
-			§ systemctl enable snmpd
-Configure SNMP
-	1. Make a backup of the original configuration file by running: 
-		○ mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig
-	2. Create a new SNMP configuration file by running: 
-		○ touch /etc/snmp/snmpd.conf
-	3. Once you have the string, edit /etc/snmp/snmpd.conf and add the following line:
-		○ rocommunity  PRDSRV
-		○ syslocation  "KARACHI-IP-PABX"
-		○ syscontact  zohaib.ahmed@samba.com.pk & re2.telecard@samba.com.pk
-	4. Save the configuration file, and finally start the SNMP service by running: 
-		○ CentOS 6: 
-			§ service snmpd restart
-		○ CentOS 7: 
-			§ systemctl restart snmpd
+yum install net-snmp net-snmp-utils -y
+
+mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig
+
+vi /etc/snmp/snmpd.conf
+
+rocommunity  PRDSRV
+syslocation  "KARACHI-IP-PABX"
+syscontact  zohaib.ahmed@samba.com.pk & re2.telecard@samba.com.pk
+
+
+systemctl enable --now snmpd
 
 From <https://support.managed.com/kb/a2390/how-to-install-snmp-and-configure-the-community-string-for-centos.aspx>
