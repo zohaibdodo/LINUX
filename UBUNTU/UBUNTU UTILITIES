@@ -1,8 +1,7 @@
-***********************************************************************SSH***********************************************************
+***********************************************************************SSH*******************************************************************************
 sudo apt update
 sudo apt install openssh-server
 sudo systemctl enable --now ssh
-sudo systemctl status ssh
 
 sudo ufw allow ssh
 
@@ -23,6 +22,7 @@ sudo systemctl enable --now snapd apparmor
 
 sudo apt install snapd
 sudo snap install snap-store
+systemctl enable --now snapd apparmor
 
 *****************************************************************Visual Studio Code***************************************************
 
@@ -75,5 +75,3 @@ Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf6
 ****************************************************************************VIDEO DOWNLOADER*************************************************************
 
 sudo snap install video-downloader
-
-zohaib ahmed

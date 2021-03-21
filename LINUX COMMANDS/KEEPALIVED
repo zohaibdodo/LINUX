@@ -1,6 +1,8 @@
-#sudo yum -y install keepalived
+sudo yum -y install keepalived
 
-#sudo cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.orig
+sudo cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.orig
+
+sudo vi /etc/keepalived/keepalived.conf
 
 For Primary Server:
 
@@ -24,7 +26,7 @@ vrrp_instance VI_1 {
         auth_pass Secret123
     }
     virtual_ipaddress {
-        10.23.200.4
+        10.23.200.6
     }
 }
 
@@ -50,7 +52,7 @@ vrrp_instance VI_1 {
       auth_pass Secret123
     }
     virtual_ipaddress {
-        10.23.200.5
+        10.23.200.6
     }
 }
 

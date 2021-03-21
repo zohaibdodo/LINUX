@@ -1,0 +1,7 @@
+sudo efibootmgr to list all the entries in Boot Menu. If the command doesn't exist, then do sudo apt install efibootmgr.
+
+Find Ubuntu in the menu and note down its boot number e.g. 1 in Boot0001
+
+Type sudo efibootmgr -b <boot number> -B to delete the entry from Boot Menu. E.g. sudo efibootmgr -b 1 -B
+
+-b: modify boot number -B: delete boot number

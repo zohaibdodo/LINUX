@@ -1,0 +1,4 @@
+tcpdump -s 0 -i any -w sip-trace.pcap
+
+-i is for interface
+-s is for packet size
