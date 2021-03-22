@@ -1,0 +1,40 @@
+There two types of BIOS:
+Legacy
+UEFI
+
+Boot Process:
+BIOS     BIOS executes MBR
+MBR      MBR executes GRUB
+GRUB     GRUB executes Kernel
+Kernel   Kernel executes /sbin/init
+INIT     INIT executes RUN level program
+RUNlevel RUNlevel executes /etc/rc.d/
+
+
+
+
+
+RHEL Installer name is Anaconda.
+
+To create manual partition we need to create three partitions.
+1) /boot
+2) /
+3) Swap  
+
+
+SWAP:
+If RAM is less than 2GB then atleast 2 times the amount of RAM.
+If RAM is greater than 2GB till 8GB then equal amount.
+IF RAM is greater than 8GB till 64GB then atleast 4GB of swap is required.
+IF RAM is greater than 64GB then atleast 4GB of Swap is required.
+
+LVM:
+If we select automatic partitions then LVM creates its partitions like
+
+/boot/efi
+/boot
+/
+ /home
+ Swap
+
+

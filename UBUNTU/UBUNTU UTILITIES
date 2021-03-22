@@ -14,6 +14,11 @@ sudo ufw allow ssh
 #sudo dpkg -i google-chrome-stable_current_amd64.deb
 #google-chrome
 *********************************************************************SNAP STORE*******************************************************
+sudo apt update
+sudo apt install snapd
+sudo apt --fix-broken install
+sudo systemctl enable --now snapd apparmor
+
 
 sudo apt install snapd
 sudo snap install snap-store
@@ -32,7 +37,7 @@ sudo dpkg -i GitHubDesktop-linux-2.6.2-linux1.deb
 
 *******************************************************************OneNote/P3X for Ubuntu*************************************************
 
-##sudo snap install p3x-onenote
+sudo snap install p3x-onenote
 
 *************************************************************************Telegram*********************************************************
 
