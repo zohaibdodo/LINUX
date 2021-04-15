@@ -47,25 +47,14 @@ sudo snap install telegram-desktop
 
 sudo snap install vlc
 
-***************************************************************************Docker for Ubuntu**************************************************************
-
-$ sudo apt-get update
-
-$ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent    software-properties-common -y
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-$sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release-cs) stable"
-$sudo apt-get update
-$sudo apt-get install docker-ce docker-ce-cli containerd.io
-
 ***************************************************************************Anyconnect********************************************************************
 
 Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf610d8ca257732dd4bcb9b
 
-#tar -xvf anyconnect-linux64-4.9.00086-predeploy-k9.tar.gz 
-#cd anyconnect-linux64-4.9.00086/
-#cd vpn/
-#sudo sh vpn_install.sh -y
+tar -xvf anyconnect-linux64-4.9.00086-predeploy-k9.tar.gz 
+cd anyconnect-linux64-4.9.00086/
+cd vpn/
+sudo sh vpn_install.sh -y
 
 ******************************************************************************Wireshark*******************************************************************
 
