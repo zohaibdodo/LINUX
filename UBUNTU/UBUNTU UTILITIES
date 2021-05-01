@@ -31,6 +31,10 @@ sudo snap install code --classic
 
 ***********************************************************************GIT**************************************************************
 
+https://github.com/shiftkey/desktop/releases
+
+
+
 https://github.com/shiftkey/desktop/releases/download/release-2.6.2-linux1/GitHubDesktop-linux-2.6.2-linux1.deb
 
 sudo dpkg -i GitHubDesktop-linux-2.6.2-linux1.deb
