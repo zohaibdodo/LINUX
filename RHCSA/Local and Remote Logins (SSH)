@@ -2,7 +2,7 @@ Linux to Linux:
 
 To generate SSH key:
 
-#ssh-keygen
+ssh-keygen
 
 To copy ssh public key to other system:
 
