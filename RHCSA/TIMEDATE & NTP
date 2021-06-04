@@ -38,11 +38,11 @@ i.e. 192.168.40.0/24
 
 To set NTP:
 
-#timedatectl set-ntp yes/true
+timedatectl set-ntp yes/true
 
 To check Chrony sync status:
 
-#chronyc sources -v
+chronyc sources -v
 
 For Time Zone Setting:
 
