@@ -3,6 +3,7 @@ XRDP FOR UBUNTU:
 sudo apt install xrdp
 sudo systemctl enable --now xrdp
 sudo ufw allow from any to any port 3389 proto tcp
+sudo ufw allow from any to any port 3350 proto tcp
 
 From <https://linuxconfig.org/ubuntu-20-04-remote-desktop-access-from-windows-10>
 
