@@ -39,9 +39,10 @@ sudo snap install telegram-desktop
 ***************************************************************************VLC Player******************************************************
 sudo snap install vlc
 ***************************************************************************Anyconnect********************************************************************
-Download Link: https://uci.service-now.com/sys_attachment.do?sys_id=3af1db091bf610d8ca257732dd4bcb9b
 
-tar -xvf anyconnect-linux64-4.9.00086-predeploy-k9.tar.gz 
+https://software.cisco.com/download/home/286281283/type/282364313/release/4.10.01075
+
+tar -xvf anyconnect-linux... 
 cd anyconnect-linux64-4.9.00086/
 cd vpn/
 sudo sh vpn_install.sh -y
