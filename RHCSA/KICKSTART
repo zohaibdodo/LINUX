@@ -25,3 +25,7 @@ To verify KickStart file:
 #ksvalidator Unattended.cfg
 
 pykickstart RPM provides ksvalidator
+
+
+Create a Kickstart configuration file with the system-config-kickstart utility
+Modify an existing Kickstart configuration file with a text editor and check its syntax with ksvalidator.
