@@ -11,7 +11,9 @@ To send emails MX records is checked
 A email sender sent email to the recipient so that system checks the MX records
 Example:
 
-#host -t MX hbl.com
+#
+
+
 
 Result:
 hbl.com mail is handled by 0 hbl.com.mail.protection.outlook.com(104.47.5.36)
