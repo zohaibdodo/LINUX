@@ -25,7 +25,6 @@ exit
 
 Reboot
 
-
 For Grub:
 
 grub>ls
@@ -35,5 +34,7 @@ grub>linux16 (hd0,msdos1)/vmlinuz root=/dev/sda2
 grub>initramfs16 (hd0,msdos1)/initramfs*.img
 grub>boot
 
-#grub2-mkconfig -o /boot/grub2/grub.conf
+#grub2-mkconfig -o /boot/grub2/grub.cfg
+
+Debug Shell (F9)/Maintanance shell
 
