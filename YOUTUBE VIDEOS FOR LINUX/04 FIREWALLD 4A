@@ -1,0 +1,23 @@
+We have a CLI machine which we named Firewall. it has two interfaces.
+One interface will be host only and second one is NAT.
+
+#lspci | grep -i ethernet
+
+#nmcli dev status
+
+#nmcli con show
+
+#nmcli con modify ens33 ipv4.method manual ipv4.address 192.168.65.101/24 connection.autoconnect yes
+
+Now connection status will be green.
+
+#nmcli con mod ens33 connection.zone internal
+
+Now adding second connection:
+
+#nmcli con add con-name ens37 type ethernet ifname ens37 ipv4.method manual ipv4.address 192.168.40.101/24 connection.zone external connection.autoconnect yes
+
+if you want to see list all.
+
+#firewall-cmd --list-all --zone=internal
+
