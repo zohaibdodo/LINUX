@@ -40,8 +40,6 @@ sudo snap install telegram-desktop
 sudo snap install vlc
 ***************************************************************************Anyconnect********************************************************************
 
-https://software.cisco.com/download/home/286281283/type/282364313/release/4.10.01075
-
 tar -xvf anyconnect-linux... 
 cd anyconnect-linux64-4.9.00086/
 cd vpn/
