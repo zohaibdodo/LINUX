@@ -9,5 +9,5 @@ From <https://linuxconfig.org/ubuntu-20-04-remote-desktop-access-from-windows-10
 
 XRDP FOR FEDORA:
 
-
+firewall-cmd --add-port=3350/tcp --permanent
 firewall-cmd --add-port=3389/tcp --permanent
