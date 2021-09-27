@@ -1,4 +1,4 @@
-grep -E -c "vmx|svm" /proc/cpuinfo
+#grep -E -c "vmx|svm" /proc/cpuinfo
 
 # sudo apt install -y cpu-checker gcc-9-base gcc-9 libstdc++-9-dev libasan5 cpp-9 libgcc-9-dev msr-tools
 
@@ -20,18 +20,6 @@ To mount ISO in KVM directoy:
 Tools to convert VMdk 
 #yum search p2v
 #yum search v2v
-
-
-
-
-
-
-
-
-
-
-
-
 
 https://www.tecmint.com/install-kvm-on-ubuntu/
 
