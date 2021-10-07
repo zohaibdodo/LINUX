@@ -1,25 +1,8 @@
 https://www.cloudsigma.com/setting-up-apache-virtual-hosts-on-ubuntu-20-04/#wpautbox_about
 
-Setting Up Apache Virtual Hosts on Ubuntu 20.04
-
-Apache comes with a matching system that you can use to host multiple domains or sites using a single Apache server installation exposed on a single IP address. The domains or sites are set up in one of the Apache configuration files defined as virtual hosts.
-
-Each domain has one virtual host definition with a specific directory that it directs to. When a user visits a domain, the server examines every matching virtual host and selects which one to use to serve the visitor’s request depending on the hostname they entered. If no matching hostname is found, the server uses the first defined virtual host in the conf file as a fallback. The visitor will access the web page they requested without knowing that the same server is serving other sites. Depending on the resources you have on your server and how much traffic it can handle, you can host as many domains as you want.
-
-In this tutorial, we will guide you through setting up virtual hosts on the Ubuntu 20.04 server.
-
-First Things First
-In order to follow the tutorial, you should have an installation of Ubuntu 20.04. You also need to create a non-root user and login with it.
-
-The steps in this tutorial also require you to have Apache installed. If you haven’t already done so, you can install it using the commands below. You can follow our LAMP Stack setup – Linux Apache MySQL PHP tutorial for a more detailed setup guide.
-
 sudo apt update
 sudo apt install apache2
-1
-2
-sudo apt update
-sudo apt install apache2
-You should have free or paid domain names registered from a domain registrar of your choice. Ensure the domains point to your server through configuring the DNS records. However, you can still use our configurations to follow through the steps in this tutorial. We will be using example.dev and mydomain.com for this tutorial. You are free to substitute them with your own. If you decide to use the test domains, then the hosts files on Apache must be edited to handle the domains. We will cover how to do this later in the tutorial.
+
 
 Step 1 – Set up the Website Directories
 These are the directories holding the site’s data that your website visitors will be accessing. Apache’s document root that is accessible from the internet is usually in the /var/www. Here is where we will create the directories for the individual domains we want to host. In each of the directories, we will add public_html directory to hold the actual website files. The virtual host points to the public_html directory. This gives you flexibility since you can keep crucial website files outside the public_html and only place public files inside.
@@ -28,10 +11,7 @@ Next, enter the commands below to create the directories. Always remember to sub
 
 sudo mkdir -p /var/www/example.dev/public_html
 sudo mkdir -p /var/www/mydomain.com/public_html
-1
-2
-sudo mkdir -p /var/www/example.dev/public_html
-sudo mkdir -p /var/www/mydomain.com/public_html
+
 Step 2 – Change Read-Write Permissions
 The previous commands created the directory structure but kept the ownership to the root user. We want our non-root user to have full read-write permissions to the directories. We also want the general web to have read permissions.
 
