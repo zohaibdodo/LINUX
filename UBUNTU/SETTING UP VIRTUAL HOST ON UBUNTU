@@ -1,25 +1,7 @@
 https://www.cloudsigma.com/setting-up-apache-virtual-hosts-on-ubuntu-20-04/#wpautbox_about
 
-Setting Up Apache Virtual Hosts on Ubuntu 20.04
-
-Apache comes with a matching system that you can use to host multiple domains or sites using a single Apache server installation exposed on a single IP address. The domains or sites are set up in one of the Apache configuration files defined as virtual hosts.
-
-Each domain has one virtual host definition with a specific directory that it directs to. When a user visits a domain, the server examines every matching virtual host and selects which one to use to serve the visitor’s request depending on the hostname they entered. If no matching hostname is found, the server uses the first defined virtual host in the conf file as a fallback. The visitor will access the web page they requested without knowing that the same server is serving other sites. Depending on the resources you have on your server and how much traffic it can handle, you can host as many domains as you want.
-
-In this tutorial, we will guide you through setting up virtual hosts on the Ubuntu 20.04 server.
-
-First Things First
-In order to follow the tutorial, you should have an installation of Ubuntu 20.04. You also need to create a non-root user and login with it.
-
-The steps in this tutorial also require you to have Apache installed. If you haven’t already done so, you can install it using the commands below. You can follow our LAMP Stack setup – Linux Apache MySQL PHP tutorial for a more detailed setup guide.
-
 sudo apt update
 sudo apt install apache2
-1
-2
-sudo apt update
-sudo apt install apache2
-You should have free or paid domain names registered from a domain registrar of your choice. Ensure the domains point to your server through configuring the DNS records. However, you can still use our configurations to follow through the steps in this tutorial. We will be using example.dev and mydomain.com for this tutorial. You are free to substitute them with your own. If you decide to use the test domains, then the hosts files on Apache must be edited to handle the domains. We will cover how to do this later in the tutorial.
 
 Step 1 – Set up the Website Directories
 These are the directories holding the site’s data that your website visitors will be accessing. Apache’s document root that is accessible from the internet is usually in the /var/www. Here is where we will create the directories for the individual domains we want to host. In each of the directories, we will add public_html directory to hold the actual website files. The virtual host points to the public_html directory. This gives you flexibility since you can keep crucial website files outside the public_html and only place public files inside.
@@ -28,10 +10,7 @@ Next, enter the commands below to create the directories. Always remember to sub
 
 sudo mkdir -p /var/www/example.dev/public_html
 sudo mkdir -p /var/www/mydomain.com/public_html
-1
-2
-sudo mkdir -p /var/www/example.dev/public_html
-sudo mkdir -p /var/www/mydomain.com/public_html
+
 Step 2 – Change Read-Write Permissions
 The previous commands created the directory structure but kept the ownership to the root user. We want our non-root user to have full read-write permissions to the directories. We also want the general web to have read permissions.
 
@@ -39,24 +18,17 @@ First, change the ownership to the non-root user by entering the following comma
 
 sudo chown -R $USER:$USER /var/www/example.dev/public_html
 sudo chown -R $USER:$USER /var/www/mydomain.com/public_html
-1
-2
-sudo chown -R $USER:$USER /var/www/example.dev/public_html
-sudo chown -R $USER:$USER /var/www/mydomain.com/public_html
+
 The $USER is a variable that takes the credentials of the currently logged-in user. The regular user now has ownership of the public_html. Next, you need to grant read permissions to the general web. The following command allows the permission to all the files in the directory ensuring the web pages are served correctly:
 
 sudo chmod -R 755 /var/www
-1
-sudo chmod -R 755 /var/www
+
 From running the previous three commands, your website can now serve content. In addition, your user can equally create content to be served in the specific directories. Here you can find more information on Ubuntu permissions.
 
 Step 3 – Create Demo Pages in the Directories for Each Virtual Host
 With the directory structure in place, it’s time to do some scripting. We will be using HTML and nano text editor to create some basic web pages. Enter the following command to open nano and create an index.html file in the directory for the first domain:
 
 vim /var/www/example.dev/public_html/index.html
-1
-vim /var/www/example.dev/public_html/index.html
-In the editor, put the following sample code that will show when we access the domain:
 
 <html>
         <head> 
@@ -66,47 +38,9 @@ In the editor, put the following sample code that will show when we access the d
                 <h1>Success! The example.dev virtual host is working!</h1>
         </body>
 </html>
-1
-2
-3
-4
-5
-6
-7
-8
-<html>
-        <head> 
-                <title>Welcome to Example.dev!</title> 
-        </head>
-        <body>
-                <h1>Success! The example.dev virtual host is working!</h1>
-        </body>
-</html>
-Once you have pasted the above lines, press “!wq” to save and exit the file.
-
-Create the index.html page for the second domain using nano editor by entering the following command:
 
 vim /var/www/mydomain.com/public_html/index.html
-1
-vim /var/www/mydomain.com/public_html/index.html
-Then, in the editor, paste the following HTML code, save and exit:
 
-<html>
-        <head> 
-                <title>Welcome to Mydomain.com!</title> 
-        </head>
-        <body>
-                <h1>Success! The mydomain.com virtual host is working!</h1>
-        </body>
-</html>
-1
-2
-3
-4
-5
-6
-7
-8
 <html>
         <head> 
                 <title>Welcome to Mydomain.com!</title> 
@@ -116,9 +50,6 @@ Then, in the editor, paste the following HTML code, save and exit:
         </body>
 </html>
  
-
-Now, you have the pages to test the two virtual hosts we are going to be creating in the next step.
-
 Step 4 – Create Virtual Host Files for The Domain Names
 Virtual host files contain configurations for each virtual host. They define how a domain name will be served. A new installation of Apache comes with a default virtual host file called 000-default.conf which we can use and adapt to our domains. As you can see, it ends with a .conf extension, which is what Ubuntu expects for configuration files.
 
@@ -152,35 +83,18 @@ DocumentRoot /var/www/example.dev/public_html
 ErrorLog ${APACHE_LOG_DIR}/error.log     
 CustomLog ${APACHE_LOG_DIR}/access.log combined 
 &lt;/VirtualHost&gt;
-1
-2
-3
-4
-5
-6
-7
-8
-&lt;VirtualHost *:80&gt;     
-ServerAdmin admin@example.dev     
-ServerName example.dev     
-ServerAlias www.example.dev     
-DocumentRoot /var/www/example.dev/public_html     
-ErrorLog ${APACHE_LOG_DIR}/error.log     
-CustomLog ${APACHE_LOG_DIR}/access.log combined 
-&lt;/VirtualHost&gt;
+
 After that, update your domains and email appropriately. Once done, press CTRL + O and ENTER to save the file. To exit the editor, press CTRL + X.
 
 Create the first virtual host file for mydomain.com domain
 We can just copy the virtual host for the first domain and update it where necessary for the second domain. Use the following command to copy the file:
 
 sudo cp /etc/apache2/sites-available/example.dev.conf /etc/apache2/sites-available/mydomain.com.conf
-1
-sudo cp /etc/apache2/sites-available/example.dev.conf /etc/apache2/sites-available/mydomain.com.conf
+
 Then, open it in nano editor using the command:
 
 sudo nano /etc/apache2/sites-available/mydomain.com.conf
-1
-sudo nano /etc/apache2/sites-available/mydomain.com.conf
+
 Find the directives and update them appropriately so the file looks like shown below:
 
 &lt;VirtualHost *:80&gt;     
@@ -191,22 +105,7 @@ DocumentRoot /var/www/mydomain.com/public_html
 ErrorLog ${APACHE_LOG_DIR}/error.log     
 CustomLog ${APACHE_LOG_DIR}/access.log combined 
 &lt;/VirtualHost&gt;
-1
-2
-3
-4
-5
-6
-7
-8
-&lt;VirtualHost *:80&gt;     
-ServerAdmin admin@mydomain.com     
-ServerName mydomain.com 
-ServerAlias www.mydomain.com     
-DocumentRoot /var/www/mydomain.com/public_html
-ErrorLog ${APACHE_LOG_DIR}/error.log     
-CustomLog ${APACHE_LOG_DIR}/access.log combined 
-&lt;/VirtualHost&gt;
+
 Once done, save the file and exit the editor.
 
 Step 5 – Enabling the Virtual Host Files
@@ -216,28 +115,22 @@ Enter the following two commands to enable the virtual hosts:
 
 sudo a2ensite example.dev.conf
 sudo a2ensite mydomain.com.conf
-1
-2
-sudo a2ensite example.dev.conf
-sudo a2ensite mydomain.com.conf
+
 The output of the above commands is as shown below:
 
 Apache еnable configuration
 Next, you should disable the default configuration file, we use the a2dissite Apache tool for disabling sites. Enter the following command:
 
 sudo a2dissite 000-default.conf
-1
-sudo a2dissite 000-default.conf
+
 As seen from the output, you must restart Apache for the configurations to pick up. Use the following command:
 
 sudo systemctl restart apache2
-1
-sudo systemctl restart apache2
+
 Then, check the status of Apache using the following command:
 
 sudo systemctl status apache2
-1
-sudo systemctl status apache2
+
 The output shows that your server is up and running, and it is able to serve the two websites.
 
 Apache 2 status
@@ -247,8 +140,7 @@ If you had not registered an actual domain but you were instead using test domai
 If you are on a Mac or Linux machine, the hosts file is located in the /etc directory. We will use a nano editor to open and add our test domains. First, find your VPS IP address by entering the following command:
 
 curl -4 icanhazip.com
-1
-curl -4 icanhazip.com
+
 Enter the following command to open the file and update with your server’s IP address:
 
 sudo nano /etc/hosts
@@ -258,31 +150,20 @@ sudo nano /etc/hosts
 127.0.1.1   ComputerName
 your_server_IP example.dev
 your_server_IP mydomain.com
-1
-2
-3
-4
-127.0.0.1   localhost
-127.0.1.1   ComputerName
-your_server_IP example.dev
-your_server_IP mydomain.com
+
 Then, save and close the file. Whenever you enter a domain name in your browser, the host file is first checked. If the domain name is found, the traffic is directed to the IP address specified. If not found, the DNS system is used for global redirection. For our test domains, the traffic will be directed to the IP address specified.
 
 Step 7 – Test Your Virtual Hosts
 With the domain names set up, you can test whether they are working by checking them in the browser/terminal:
 
 curl http://example.dev
-1
-curl http://example.dev
+
 The output should display something like this:
 curl example.dev
 http://mydomain.com
-1
-http://mydomain.com
+
 Apache curl mydomain.com
 Congratulations! You have successfully configured two websites to run on one server.
 
 Conclusion
 In this guide, you learned how to configure your Apache Server to serve more than one website. If you would like to add more websites, you can do so, by following the steps and setting up virtual hosts. Apache can handle as many domains as you may wish, as long as your server resources can handle them.
-
-Happy Computing!

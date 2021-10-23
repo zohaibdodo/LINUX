@@ -5,13 +5,13 @@ sudo systemctl enable --now ssh
 
 sudo ufw allow ssh
 
-********************************************************************Google Chrome****************************************************
+********************************************************************Google Chrome************************************************************************
 sudo apt update
 sudo apt upgrade
 sudo apt install wget         (If Required)
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-*********************************************************************SNAP STORE*******************************************************
+*********************************************************************SNAP STORE**************************************************************************
 sudo apt update
 
 sudo snap install snap-store
@@ -23,20 +23,18 @@ sudo systemctl enable --now snapd apparmor
 sudo apt install snapd
 sudo snap install snap-store
 systemctl enable --now snapd apparmor
-*****************************************************************Visual Studio Code***************************************************
-sudo apt install snapd
+*****************************************************************Visual Studio Code**********************************************************************
+sudo apt install snapd -y
 sudo snap install code --classic
-***********************************************************************GIT**************************************************************
+***********************************************************************GIT DESKTOP***********************************************************************
 https://github.com/shiftkey/desktop/releases
-https://github.com/shiftkey/desktop/releases/download/release-2.6.2-linux1/GitHubDesktop-linux-2.6.2-linux1.deb
-
-sudo dpkg -i GitHubDesktop-linux-2.6.2-linux1.deb
-*******************************************************************OneNote/P3X for Ubuntu*************************************************
-sudo snap install p3x-onenote
-*************************************************************************Telegram*********************************************************
-sudo snap install telegram-desktop
-***************************************************************************VLC Player******************************************************
-sudo snap install vlc
+sudo dpkg -i GitHubDesktop-linux*.deb
+*******************************************************************OneNote/P3X for Ubuntu****************************************************************
+sudo snap install p3x-onenote -y
+*************************************************************************Telegram***********************************************************************
+sudo snap install telegram-desktop -y
+***************************************************************************VLC Player*******************************************************************
+sudo snap install vlc -y
 ***************************************************************************Anyconnect********************************************************************
 
 tar -xvf anyconnect-linux... 
@@ -48,13 +46,9 @@ http://dl1.technet24.ir/Downloads/Software/Cisco/AnyConnect/
 
 ******************************************************************************Wireshark*******************************************************************
 
-#sudo apt install wireshark
-#sudo usermod -aG wireshark $(whoami)
+sudo apt install wireshark -y
+sudo usermod -aG wireshark $(whoami)
 
 ****************************************************************************VIDEO DOWNLOADER*************************************************************
 
-sudo snap install video-downloader
-
-****************************************************************************REMMINA************************************************************************
-
-sudo apt-get install remmina
+sudo snap install video-downloader -y
