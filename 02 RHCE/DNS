@@ -1,0 +1,124 @@
+
+	1) Unbound (Caching DNS - forwarding)
+	2) DNSmasq (DHCP + DNS)
+	3) Bind
+
+DNS Records:
+
+MX (Mail Exchanger):
+
+To send emails MX records is checked
+A email sender sent email to the recipient so that system checks the MX records
+Example:
+
+#
+
+
+
+Result:
+hbl.com mail is handled by 0 hbl.com.mail.protection.outlook.com(104.47.5.36)
+
+TXT: (Descriptive text):
+
+Sender Policy Framework
+
+#host -t bankislami.com.pk
+
+Result:
+vspfl=202.141.255.217 -all
+
+~ means soft or flexable while receiving mail
+
+Name Server (NS):
+
+It is basically DNS of domain and it may be multiple entries.
+
+#host -t NS samba.com.pk
+
+SOA: (Start of Authority)
+
+It is primary server where admin set A records to resolve an IP address to FQDN.
+
+SRN Records: (Service Records)
+
+Previously SLP (Service Location Protocol) it is basically resource records that is used to identify computer that host specific service.
+
+CNAME: (Canonical Records)
+
+Type of resource record, in which maps one domain name (an alias) to another.
+
+DKIM: (Domain Key)
+
+
+
+
+DNS -----------5B
+
+Unbound (Caching DNS)
+
+#yum install unbound
+
+#cp /etc/unbound/unbound.conf /etc/unbound/unound.conf.orig          (Very Important to backup config file)
+
+#vi /etc/unbound/unbound.conf
+
+Add interface (192.168.65.177)
+
+Add access-control (192.168.65.0/24)
+
+forword-zone
+	name = "." or .
+	forward-host: 8.8.8.8
+
+Domain-insecure	"onwire.pk"
+
+Figure 
+
+#firewall-cmd --get-default-zone
+
+#firewall-cmd --get-active-zone
+public
+interface: ens33 	ens37
+
+#firewall-cmd --zone=internal --add-interface=ens33 --permenant
+
+To check public zone service
+
+#firewall-cmd --list-all --zone=public 
+
+To add masquerade:
+
+#firewall-cmd --zone=public --permenant --add-masquerade
+
+after that reload firewall-cmd
+
+#firewall-cmd --reload
+
+Add DNS service on internal zone
+
+#firewall-cmd --permenant --zone=internal --add-service=dns
+
+DNS ------------------------ 5C
+
+BIND:
+
+#yum install bind
+
+#cp /etc/named.conf	/etc/named.conf.org
+
+#vi /etc/named.conf
+
+option {
+		listen-on port 53 {192.168.65.177;] allow-query {local-host; 192.168.65.0/24;}; 
+		}
+		
+zone "onwire.pk" in {
+					 type master;
+					 file "onwire.fwd.db";
+					 };
+zone "65.168192.in.addr.arpa" IN {
+								  Type master;
+								  file "onwire.rev.db";
+								  to check named configuration
+								  
+#named-checkconf	/etc/named.conf
