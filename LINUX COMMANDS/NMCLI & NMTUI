@@ -1,33 +1,33 @@
+To install NMCLI utility:
+
+#sudo yum install NetworkManager-tui
+
+To up connection:
+
+#nmcli connection up eth0
+
+To set static ip and gw to connection:
+
 # nmcli con add type ethernet con-name static2 ifname enp0s3 ip4 192.168.1.50/24 gw4 192.168.1.1
 
 From <https://www.tecmint.com/configure-network-connections-using-nmcli-tool-in-linux/> 
 
-
-
-#sudo yum install NetworkManager-tui
-
 From <http://www.vassox.com/linux-general/install-nmtui-network-manager-on-centos-rhel/> 
-
-
-Persistant Gateway
-Tuesday, May 7, 2019
-11:55 AM
-/etc/sysconfig/network
 
 
 GATEWAYDEV=network_interface
 GATEWAY=default_gateway_ip
 
+
 Linux add a default gateway (route) using ipcommand
-Monday, July 15, 2019
-12:50 PM
-ip route add 192.168.1.0/24 dev eth0
+
+#ip route add 192.168.1.0/24 dev eth0
 
 From <https://www.cyberciti.biz/faq/linux-route-add/> 
+
 Add a permanent static route
 
-nano /etc/sysconfig/network-scripts/route-eth0
-
+#nano /etc/sysconfig/network-scripts/route-eth0
 
 172.16.5.0/24 via 10.0.0.101 dev eth0
 
