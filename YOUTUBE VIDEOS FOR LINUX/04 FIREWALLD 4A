@@ -20,4 +20,3 @@ Now adding second connection:
 if you want to see list all.
 
 #firewall-cmd --list-all --zone=internal
-
