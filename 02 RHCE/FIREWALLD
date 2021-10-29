@@ -1,0 +1,151 @@
+To check ethernet controllers:
+
+#lspci | grep -I ethernet
+
+To check network device status
+
+#nmcli dev status
+
+To show connections:
+
+#nmcli con show
+
+To modify network adaptor with static IP address:
+
+#nmcli con mod ens33 ipv4.method manual ipv4.address 192.168.65.101/24 connection.autoconnect yes
+
+To add another connection:
+
+#nmcli con add ipv4.method manual ipv4.address 192.168.45.101/24 connection.autoconnect yes connection.zone external
+
+Firewall
+
+Zone related configuration
+
+To check firewall zone
+
+#firewall-cmd --get-zones
+
+To change connection zone:
+
+#nmcli con mod ens33 connection.zone internal
+
+To check firewall default zones:
+
+#firewall-cmd --get-default-zone
+
+To check firewall active zones:
+
+#firewall-cmd --get-active-zone
+
+To get all zone in firewall:
+
+#firewall-cmd --get-zones
+
+#firewall-cmd --list-all
+
+To set default zone:
+
+#firewall-cmd --set-default-zone=internal --permenant
+
+To change interface zone:
+
+#firewall-cmd --zone=zone-name --change-interface=<interface-name>
+
+To create new zone from File level:
+
+#cp home.xml private.xml
+
+To create new zone:
+
+#firewall-cmd --permanent --new-zone=pappu
+
+It will be created in /etc/firewalld/zone
+
+To delete zone:
+
+#firewall-cmd --permanent --delete-zone=private
+
+To check interface's zone:
+
+#firewall-cmd --get-zone-of-interface=interface
+
+
+
+
+
+
+Firewall Configuration Location:
+
+#cd /usr/lib/firewalld/zones
+#vi /usr/lib/firewalld/services/ssh.xml
+
+
+Change following things:
+
+<Short>Private</Short>
+<Service name="http">
+
+Reload firewall:
+
+#firewall-cmd --reload
+
+Modes of Firewall:
+
+Permanent
+Temporary   --timeout=300 (Sec)
+
+
+To remove service:
+
+#firewall-cmd --remove-service=http --permanent
+
+To add port:
+
+#firewall-cmd --add-port=443/tcp
+
+List all 
+
+#firewall-cmd --list-all --zone=internal
+
+List Ports:
+
+Firewall-cmd --list-port --zone=internal
+
+List Service
+
+#firewall-cmd --list-service --zone=external
+
+To list all service:
+
+#firewall-cmd --get-service
+
+To show default port of service:
+
+#cd /usr/lib/firewalld/service
+
+#cat http.xml
+
+Rich Rule:
+
+#firewall-cmd --timeout= --add-rich-rule='rule family=ipv4 source address 192.168.65.121 service name=ssh accept'
+
+#firewall-cmd --list-rich-rule
+
+Rule format:
+
+Rule
+	[Source]
+	[Destination]
+	Service |port|protocol|icmp-block|masquerade|forward port
+	[log]
+	[audit]
+	[accept|reject|drop]
+	
+Port Forwarding
+
+#firewall-cmd --permanent --add-rich-rule'rule family=ipv4  source address 192.168.40.0/24 to-addr=192.168.40.201 to-port=22 protocal=tcp port=22'
+
+#firewall-cmd --permanent --zone=public --add-forward-port=port=513:proto=tcp:toport=132:toaddr=192.168.0.254
+
+Man firewalld.richlanguage:
