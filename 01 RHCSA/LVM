@@ -1,0 +1,32 @@
+#pvcreate /dev/sda /dev/sdb
+
+#vgcreate VG_name /dev/sda /dev/sdb
+#vgextend VG_name /dev/sdc(new device)
+
+
+#lvcreate  -L 18G -n LV_name VG_name
+
+Note:
+
+	• If you have only one VG then there is no need to mention VG name with LV create command.
+	• For VG at least 10% space must be left before creating LV.
+	• 
+	• To create a Snapshot from LVM take 2% of used space before creating Snapshot of LV.
+	• Vgextend command automatically creates PVs so you don’t need to execute command PV create while extending PVs.
+	• You need to execute command resize2fs for EXT(1,2,3,4) or xfs_growfs for XFS
+
+#pvmove /dev/sdb /dev/sde1
+
+Note : Pvmove command is to move current data from existing hard drive to new one.
+
+#vgremove /dev/disk_name
+
+#lvremove
+
+
+
+#lvcreate -s -L 200M (2%of disk space) -n root-snap
+
+To revert :
+
+#lvconvert --merge /dev/rhel/root-snap
