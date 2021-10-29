@@ -1,0 +1,134 @@
+To check whether MariaDB is installed or not:
+
+#rpm -qa mariadb
+
+To install Maria DB:
+
+#yum install mariadb mariadb-server -y
+
+Start the service:
+
+#systemctl enable --now mariadb
+
+To check mariadb port:
+
+#netstat -planet | grep :3306
+
+To bind IP address on interface:
+
+#vi /etc/my.cnf
+bind=192.168.111.11
+
+If you want to MariaDB can not be accessed from networking:
+
+Skip-networking=1
+
+#mysql
+
+#show databases;
+
+For secure installation:
+
+#mysql_secure_installation
+
+Set root password [Y/N]
+Remove anonymous users? [Y/N] 
+Disallow root login remotely? [Y/n]
+Remove test database and access to it? [Y/n]
+Reload privilege tables now? [Y/n]
+
+To access from root with password:
+
+#mysql -u root -p
+
+To access from root with password for particular database:
+
+#mysql -u root -p mysql
+
+Backup:
+
+With MYSQLDUMP
+#mysqldump -u root -p database_name > location 
+
+#mysqldump -u root -p --all-databases > /tmp/all.sql
+
+With File
+#cp /var/lib/mysql/* to Backup_location 
+
+Restore:
+
+#mysql -u root databse_name < location
+
+#mysql -u root -p blank-db < /tmp/backup.sql
+
+Create Users for Database Instance:
+
+#create user zohaib@'10.21.8.159' identified by 'password';
+#create user zohaib@'10.21.8.%' identified by 'password';  (With particular network)
+#create user zohaib@'%' identified by 'password'; ( from everywhere)
+#create user zohaib@'localhost' identified by 'password';
+
+Delete Users:
+
+>delete user from user where host='%' and user='neduet';
+>delete user from user where host='192.168.40.%' and user='neduet';
+
+Flush Privileges:
+
+>flush privileges (use this command after every addition or deletion of user)
+
+Create Database:
+
+#create database ssuet;
+
+Delete/Drop Database:
+
+#drop databases ssuet;
+
+To Query Databases:
+
+#use ssuet;
+
+>show tables;
+
+>describe table_name;
+
+Grant Access/Privileges:
+
+All privilages:
+
+>grant all privileges on database_name to user@host;
+
+INSERT,UPDATE AND DELETE:
+
+>grant INSERT,UPDATE,SELECT on database.* to user@'host';
+
+>grant usage on ssuet.* to neduet@'localhost';
+
+>show grants for user@'localhost';
+
+Revoke Privileges:
+
+>revoke all privileges on database_name from user@'host';
+>flush privileges;
+
+>revoke usage on *.* from neduet@'localhost';
+
+Update:
+>update user set host='192.168.40.99' where user='shah';
+
+Select Query:
+
+>select user,host,password from user;
+
+Insert Query
+
+>insert into user(user,host,max_connections) values ('shah','192.168.10.11','3');
+
+Update Query
+
+>update user set host='192.168.10.99' where user='shah';
+
+HELP
+
+#man mysqladmin
