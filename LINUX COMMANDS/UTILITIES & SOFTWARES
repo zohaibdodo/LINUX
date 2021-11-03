@@ -1,9 +1,0 @@
-TWEAK TOOLS:
-
-sudo dnf install gnome-tweak-tool -y
-
-VIDEO DOWNLOADER:
-
-sudo dnf install snapd -y
-sudo ln -s /var/lib/snapd/snap /snap
-sudo snap install video-downloader
