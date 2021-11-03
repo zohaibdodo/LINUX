@@ -1,3 +1,0 @@
-sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-
-FROM 3 TO 2
