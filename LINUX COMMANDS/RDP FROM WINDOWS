@@ -1,0 +1,13 @@
+XRDP FOR UBUNTU:
+
+sudo apt install xrdp -y
+sudo systemctl enable --now xrdp
+sudo ufw allow from any to any port 3389 proto tcp
+sudo ufw allow from any to any port 3350 proto tcp
+
+From <https://linuxconfig.org/ubuntu-20-04-remote-desktop-access-from-windows-10>
+
+XRDP FOR FEDORA:
+
+firewall-cmd --add-port=3350/tcp --permanent
+firewall-cmd --add-port=3389/tcp --permanent
