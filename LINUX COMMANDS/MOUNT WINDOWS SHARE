@@ -38,3 +38,7 @@ If there is any space in the server path, you need to replace it by \040, for ex
 
 Centos 6
 \\10.21.23.44\callsbackup\KHI_71 /mnt/san cifs _netdev,username=service.recording,password=AER#SDFgtr1367AGT#QDHdef1257,domain=samba.com.pk 0 0
+
+Treasury DR
+
+10.21.23.44:/callsbackup/KHI_TR_DR /mnt/san            cifs    username=service.recording,password=AER#SDFgtr1367AGT#QDHdef1257       0 0
