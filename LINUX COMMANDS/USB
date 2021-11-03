@@ -1,0 +1,21 @@
+#dd bs=4M if=/home/sana/Downloads/ubuntu-18.04.2-live-server-amd64.iso of=/dev/sdb1 status=progress oflag=sync
+
+From <https://vitux.com/how-to-create-a-bootable-usb-stick-from-the-ubuntu-terminal/> 
+
+
+To format USB first unmount /dev/sdX
+
+For partitioning :
+
+Fdsik /dev/sdX
+
+To delete partitions:
+Type "d"
+To create new partitions:
+Type "n"
+To write partitions:
+W
+
+# mkfs.ntfs /dev/sdXn
+
+From <https://tecadmin.net/format-usb-in-linux/>
