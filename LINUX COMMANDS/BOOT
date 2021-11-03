@@ -1,0 +1,45 @@
+nano /etc/default/grub
+
+Easily Change GRUB Boot Order in Kali Linux - Edit GRUB
+
+6. Change GRUB_DEFAULT=0 (around line 6) to equal the number of the Windows operating system in the list found in step 2. In our example, GRUB_DEFAULT=0 becomes GRUB_DEFAULT=6.
+
+Easily Change GRUB Boot Order in Kali Linux - Change Index
+
+7. Save the GRUB file (Ctrl+O and Enter). Exit the file editor (Ctrl+X).
+
+8. Run update-grub to apply the changes.
+
+Easily Change GRUB Boot Order in Kali Linux - update-grub
+
+9. Reboot the machine (reboot).
+
+
+sudo su
+cd /boot/efi/EFI
+mv BOOT BOOT_bak
+cp -R ubuntu BOOT
+cd BOOT
+mv shimx64.efi bootx64.efi
+
+https://tipsonubuntu.com/2016/07/20/grub2-boot-order-ubuntu-16-04/
+
+ To list all the entries in Boot Menu. If the command doesn't exist, then do 
+
+sudo efibootmgr
+
+sudo apt install efibootmgr.
+
+Find Ubuntu in the menu and note down its boot number e.g. 1 in Boot0001
+
+Type sudo efibootmgr -b <boot number> -B to delete the entry from Boot Menu. E.g. 
+
+sudo efibootmgr -b 1 -B
+
+-b: modify boot number -B: delete boot number
+
+cd /boot/efi/EFI
+    2  mv BOOT BOOT_bak
+    3  cp -R ubuntu BOOT
+    4  cd BOOT
+    5  mv shimx64.efi bootx64.efi
