@@ -11,3 +11,6 @@ XRDP FOR FEDORA:
 
 firewall-cmd --add-port=3350/tcp --permanent
 firewall-cmd --add-port=3389/tcp --permanent
+
+
+cat /etc/X11/default-display-manager
