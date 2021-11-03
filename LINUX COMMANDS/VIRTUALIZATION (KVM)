@@ -1,0 +1,44 @@
+#grep -E -c "vmx|svm" /proc/cpuinfo
+
+# sudo apt install -y cpu-checker gcc-9-base gcc-9 libstdc++-9-dev libasan5 cpp-9 libgcc-9-dev msr-tools
+
+#sudo apt install -y qemu qemu-kvm libvirt-daemon bridge-utils virt-manager virtinst
+
+
+To check your CPU is VT enabled or not
+#grep vmx /proc/cpuinfo
+
+To check KVM module is installed on machine or not
+#lsmod | grep kvm
+
+Packages to Install KVM
+# yum install libvirt qemu-kvm virt-manager -y
+
+To mount ISO in KVM directoy:
+#var/lib/libvirt/ISO
+
+Tools to convert VMdk 
+#yum search p2v
+#yum search v2v
+
+https://www.tecmint.com/install-kvm-on-ubuntu/
+
+
+egrep -c '(vmx|svm)' /proc/cpuinfo
+sudo kvm-ok
+
+IF no output of kvm-ok
+sudo apt install cpu-checker
+
+sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager
+
+sudo systemctl status libvirtd
+sudo systemctl enable --now libvirtd
+lsmod | grep -i kvm
+
+
+TO CREATE A VIRTUAL MACHINE:
+
+sudo virt-install --name=deepin-vm --os-variant=Debian10 --vcpu=2 --ram=2048 --graphics spice --location=/home/Downloads/deepin-20Beta-desktop-amd64.iso --network bridge:vibr0 
+
+osinfo-query os
