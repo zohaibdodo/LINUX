@@ -6,7 +6,7 @@ To up connection:
 
 #nmcli connection up eth0
 
- nmcli networking on
+nmcli networking on
 
 To set static ip and gw to connection:
 
