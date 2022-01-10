@@ -1,0 +1,74 @@
+***********************************************************************SSH*******************************************************************************
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl enable --now ssh
+
+sudo ufw allow ssh
+
+********************************************************************Google Chrome************************************************************************
+sudo apt update
+sudo apt upgrade
+sudo apt install wget         (If Required)
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+*********************************************************************SNAP STORE**************************************************************************
+sudo apt update
+
+sudo snap install snap-store
+
+sudo apt install snapd
+sudo apt --fix-broken install
+sudo systemctl enable --now snapd apparmor
+
+sudo apt install snapd
+sudo snap install snap-store
+systemctl enable --now snapd apparmor
+*****************************************************************Visual Studio Code**********************************************************************
+sudo apt install snapd -y
+sudo snap install code --classic
+***********************************************************************GIT DESKTOP***********************************************************************
+https://github.com/shiftkey/desktop/releases
+sudo dpkg -i GitHubDesktop-linux*.deb
+*******************************************************************OneNote/P3X for Ubuntu****************************************************************
+sudo snap install p3x-onenote
+*************************************************************************Telegram***********************************************************************
+sudo snap install telegram-desktop
+***************************************************************************VLC Player*******************************************************************
+sudo snap install vlc
+***************************************************************************Anyconnect********************************************************************
+
+tar -xvf anyconnect-linux... 
+cd anyconnect-linux64-4.9.00086/
+cd vpn/
+sudo sh vpn_install.sh -y
+
+http://dl1.technet24.ir/Downloads/Software/Cisco/AnyConnect/
+
+******************************************************************************Wireshark*******************************************************************
+
+sudo apt install wireshark -y
+sudo usermod -aG wireshark $(whoami)
+
+****************************************************************************VIDEO DOWNLOADER*************************************************************
+
+sudo snap install video-downloader -y
+
+*******************************************************************************TWEAK TOOLS*******************************************************************
+
+sudo dnf install gnome-tweak-tool -y
+
+VIDEO DOWNLOADER:
+
+sudo dnf install snapd -y
+sudo ln -s /var/lib/snapd/snap /snap
+sudo snap install video-downloader
+
+https://snapcraft.io/docs/installing-snap-on-fedora
+
+#sudo dnf install snapd
+
+#sudo ln -s /var/lib/snapd/snap /snap
+
+To install Snap Craft:
+
+#sudo snap install snap-store
