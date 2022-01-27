@@ -8,7 +8,7 @@ sudo ufw allow ssh
 ********************************************************************Google Chrome************************************************************************
 sudo apt update
 sudo apt upgrade
-sudo apt install wget         (If Required)
+sudo apt install wget(If Required)
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 *********************************************************************SNAP STORE**************************************************************************
@@ -51,11 +51,11 @@ sudo usermod -aG wireshark $(whoami)
 
 ****************************************************************************VIDEO DOWNLOADER*************************************************************
 
-sudo snap install video-downloader -y
+sudo snap install video-downloader
 
 *******************************************************************************TWEAK TOOLS*******************************************************************
 
-sudo dnf install gnome-tweak-tool -y
+sudo dnf install gnome-tweak-tool
 
 *****************************************************************************VIDEO DOWNLOADER:***************************************************************
 
