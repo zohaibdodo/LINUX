@@ -1,19 +1,14 @@
-Install NTP:
-
-#yum install ntp
-
 To Synchronise NTP:
 
-#service ntpd stop
+service ntpd stop
+ntpdate 10.21.21.78
 
-#ntpdate 10.21.21.78
 
+timedatectl set-timezone Asia/Karachi
+timedatectl set-timezone UTC
+timedatectl set-time '2020-01-16 10:48:00'
 
-#timedatectl set-timezone Asia/Karachi
-#timedatectl set-timezone UTC
-#timedatectl set-time '2020-01-16 10:48:00'
-
-#timedatectl set-ntp true/false
+timedatectl set-ntp true/false
 
 From <https://www.tecmint.com/set-time-timezone-and-synchronize-time-using-timedatectl-command/> 
 
@@ -22,11 +17,10 @@ hwclock --systohc
 From <https://www.tutorialspoint.com/how-to-set-time-timezone-and-synchronize-system-clock-using-timedatectl-command>
 
 
-#yum install chrony
+yum install chrony
+systemctl enable --now chronyd
 
-#systemctl enable --now chronyd
-
-#vi /etc/chrony.conf
+vi /etc/chrony.conf
 
 Use public servers for NTP sync:
 
@@ -46,8 +40,8 @@ chronyc sources -v
 
 For Time Zone Setting:
 
-#timedatectl set-timezone Asia/Karachi
+timedatectl set-timezone Asia/Karachi
 
 OR
 
-#tzselect
+tzselect
