@@ -16,13 +16,12 @@ sudo apt update
 
 sudo snap install snap-store
 
-sudo apt install snapd
 sudo apt --fix-broken install
 sudo systemctl enable --now snapd apparmor
 
 sudo apt install snapd
 sudo snap install snap-store
-systemctl enable --now snapd apparmor
+
 *****************************************************************Visual Studio Code**********************************************************************
 sudo apt install snapd -y
 sudo snap install code --classic
