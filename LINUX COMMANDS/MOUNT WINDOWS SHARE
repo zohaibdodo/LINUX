@@ -1,6 +1,6 @@
 On prompt execute this command.
 
-1. #mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user=zohaib.ahmed,password=password,domain=samba.com.pk
+1.#mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user =zohaib.ahmed,password=password,domain=samba.com.pk
 2. #vi /etc/bash
 3. Paste mount -t cifs //10.21.8.159/D /mnt/D_Drive/ --verbose -o user=zohaib.ahmed,password=jojo#123,domain=samba.com.pk in /etc/bash file
 4. #exec bash
@@ -30,11 +30,9 @@ rm -rf FOLDER_NAME
 
 Troubleshooting:
 
-Run command df -h
+Run command df -Th
 
 If there is any space in the server path, you need to replace it by \040, for example //servername/My\040Documents
-
-
 
 Centos 6
 \\10.21.23.44\callsbackup\KHI_71 /mnt/san cifs _netdev,username=service.recording,password=AER#SDFgtr1367AGT#QDHdef1257,domain=samba.com.pk 0 0
