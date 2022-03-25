@@ -1,7 +1,17 @@
+##To create LVM:
+
 1) Add physical hard drive
 2) Create PV
-    a. #pvcreate /dev/sdX /dev/sdX
+#pvcreate /dev/sdX /dev/sdX
 3) Create VG
-	a. #vgcreate VG(Name of VG) PV(/dev/sdX)
+#vgcreate VG(Name of VG) PV(/dev/sdX)
 4) Create LV
 #lvcreate 
+
+##If Disk space of existing LVM is increased and not showing on df -hT or lsblk:
+
+fdisk -l -> delete partition "d", create new partition "n", select filesystem type for LVM "8e", then write "w".
+partprobe
+pvresize /dev/sdX
+lvextend -l +100%FREE /dev/mapper/ol-root
+resize2fs /dev/mapper/ol-root
