@@ -1,0 +1,41 @@
+***GREP COMMAND***
+
+#grep bash /etc/password | cut -d':' -f 1
+
+-d = delimiter means separator 
+-f = field means which field to select for data extraction
+
+Commands with Loop:
+
+For u in $(cat /tmp/users) ; do chage -d 0 $u ; done
+
+For loop command real time output:
+
+#for u in $(cat /tmp/users) ; echo "We are working on $u && do chage -d 0 $u ; done
+
+***LAST REBOOT***
+
+#last reboot
+
+Last -x | less
+
+# kill [signal or option] PID(s)
+For a kill command a Signal Name could be:
+Signal Name		Signal Value			Behaviour
+SIGHUP			      1				    Hangup
+SIGKILL			      9				    Kill Signal
+SIGTERM			      15			    Terminate
+To kill Terminals 
+
+#pkill -9 -t tty1
+
+#pkill -9 -t pts/0
+
+From <https://www.tecmint.com/how-to-kill-a-process-in-linux/> 
+
+***TCP DUMP***
+
+tcpdump -s 0 -i any -w sip-trace.pcap
+
+-i is for interface
+-s is for packet size
