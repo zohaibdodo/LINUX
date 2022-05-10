@@ -41,7 +41,7 @@ cd anyconnect-linux64-4.9.00086/
 cd vpn/
 sudo sh vpn_install.sh -y
 
-http://dl1.technet24.ir/Downloads/Software/Cisco/AnyConnect/
+https://its.gmu.edu/knowledge-base/how-to-install-cisco-anyconnect-on-linux/
 
 ******************************************************************************Wireshark*******************************************************************
 
