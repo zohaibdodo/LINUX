@@ -34,3 +34,15 @@ Add a permanent static route
 172.16.5.0/24 via 10.0.0.101 dev eth0
 
 From <https://my.esecuredata.com/index.php?/knowledgebase/article/2/add-a-static-route-on-centos>
+
+TO ADD IP ADDRESS THROUGH NMCLI:
+
+$ nmcli con mod enp0s3 ipv4.addresses 192.168.2.20/24
+$ nmcli con mod enp0s3 ipv4.gateway 192.168.2.1
+$ nmcli con mod enp0s3 ipv4.dns “8.8.8.8”
+$ nmcli con mod enp0s3 ipv4.method manual
+$ nmcli con up enp0s3
+
+TO REMOVE IP ADDRESS WITH IP COMMAND:
+
+ip addr del 10.163.148.36/24 dev enP0S3
