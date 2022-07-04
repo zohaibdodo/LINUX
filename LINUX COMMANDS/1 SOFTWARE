@@ -25,7 +25,8 @@ sudo systemctl enable --now snapd apparmor
 
 sudo apt install snapd -y
 sudo snap install code --classic
-***********************************************************************GIT DESKTOP***********************************************************************
+###GIT DESKTOP###
+
 https://github.com/shiftkey/desktop/releases
 sudo dpkg -i GitHubDesktop-linux*.deb
 *******************************************************************OneNote/P3X for Ubuntu****************************************************************
