@@ -1,24 +1,28 @@
-***********************************************************************SSH*******************************************************************************
+###SSH###
+
 sudo apt update
 sudo apt install openssh-server
 sudo systemctl enable --now ssh
 
 sudo ufw allow ssh
 
-********************************************************************Google Chrome************************************************************************
+###GOOGLE CHROME###
 sudo apt update
 sudo apt upgrade
 sudo apt install wget(If Required)
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-*********************************************************************SNAP STORE**************************************************************************
+
+###SNAP STORE###
+
 sudo apt update
 sudo snap install snap-store
 
 sudo apt --fix-broken install
 sudo systemctl enable --now snapd apparmor
 
-*****************************************************************Visual Studio Code**********************************************************************
+###VS CODE###
+
 sudo apt install snapd -y
 sudo snap install code --classic
 ***********************************************************************GIT DESKTOP***********************************************************************
