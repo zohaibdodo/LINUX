@@ -1,8 +1,0 @@
-<html>
-<h1><marquee>This is my first web page</marquee></h1>
-</html>
-
-
-<?
-Phpinfo();
-?>
