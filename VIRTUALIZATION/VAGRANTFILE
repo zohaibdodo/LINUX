@@ -12,6 +12,15 @@ vagrant init image_name (like: generic/ubunbu2204)
 
 vagrant up
 
+vagrant destroy
+
+vagrant box remove generic/ubuntu2204 --provider=hyperv
+
+For running VMs and to extract VM IDs:
+vagrant global-status
+
+To remove 
+
 
 For UBUNTU:
 
