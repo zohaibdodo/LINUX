@@ -19,4 +19,8 @@ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(l
 sudo apt update
 sudo apt install vagrant -y
 
+Vagrant Image location:
+
+/home/zohaib/.vagrant.d/boxes
+
 
