@@ -1,0 +1,4 @@
+rsync -av /opt 192.168.40.134:/opt
+
+
+rsync -av --partial source destination

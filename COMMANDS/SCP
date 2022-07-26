@@ -1,0 +1,6 @@
+scp file_name root@192.168.121.11:/opt
+
+
+scp -r /opt root@192.168.121.11:/root   #For recurssive but it will not copy directories to destination
+
+scp -rv /opt/* root@192.168.121.11:/root
