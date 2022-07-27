@@ -1,0 +1,2 @@
+mkfs -t xfs /dev/mydrive/mylv (/dev/VG_Name/LV_Name)
+ 

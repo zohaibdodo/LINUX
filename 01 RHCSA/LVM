@@ -30,3 +30,15 @@ Note : Pvmove command is to move current data from existing hard drive to new on
 To revert :
 
 #lvconvert --merge /dev/rhel/root-snap
+
+Complete Commands for Creation of New LVM:
+
+lsscsi
+pvcreate /dev/sdX
+vgcreate mydrive /dev/sdX
+lvcreate -L 18G -n mylv mydrive
+mkfs -t xfs /dev/mydrive/mylv
+mkdir database
+mount /dev/mydrive/mylv /database
+
+Complete Commands
