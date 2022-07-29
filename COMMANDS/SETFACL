@@ -1,0 +1,16 @@
+Access Control List:
+
+If we want to give access to other user then we will use setfacl command:
+
+To modify or assign rights to a user:
+setfacl -m u:huma:rw mylove.txt
+
+To remove:
+setfacl -x u:huma:rw mylove.txt
+
+For group:
+setfacl -m g:IT:r mylove.txt
+
+To assign full rights to another user:
+setfacl -R -m u:tahir:rwx /home/taha (-R for recurssive)
+
