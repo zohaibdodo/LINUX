@@ -24,5 +24,15 @@ grub>linux16 /vmlinuz-*
 grub>initrd16 /initramfs-* root=/dev/sda2
 grub>boot
 
+To extract ERRORS:
+
+journalctl -p err
+
+If your drive is LVM while executing initramfs command you need to install lvm driver:
+
+inmod lvm
+
+
 Now create a new grub file
 
+grub2-mkconfig -o /boot/grub2/grub.conf
