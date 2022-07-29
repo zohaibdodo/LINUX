@@ -1,0 +1,28 @@
+BOOT Process:
+=============
+
+Power ON
+BIOS
+    Post
+    Setup (Optional)
+    Boot loader (general)
+        1. Search boot device
+        2. Search OS in boot device (GRUB)
+        3. Load OS in boot device in RAM
+            a. vmlinuz (Kernel)
+            b. initrd  (Initializing Script)
+                1. Load Module
+                2. Mount files system
+                3. target = graphical / text
+                4. services start
+
+If boot/grub2/grub.conf is removed, Now it will land on grub mode.
+
+grub>ls
+grub>set root=(hd0,msdos1)
+grub>linux16 /vmlinuz-*
+grub>initrd16 /initramfs-* root=/dev/sda2
+grub>boot
+
+Now create a new grub file
+
