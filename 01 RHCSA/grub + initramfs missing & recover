@@ -38,3 +38,29 @@ grub>boot
 
 Debug Shell (F9)/Maintanance shell
 
+DRACUT EMERGENCY MODE:
+
+
+# ls /dev/mapper
+control  fedora-swap
+Hmm, the fedora-root LVM volume appears to be missing. Let’s see what I can find with the lvm command:
+
+# lvm lvscan
+  ACTIVE            '/dev/fedora/swap' [3.85 GiB] inherit
+  inactive          '/dev/fedora/home' [22.85 GiB] inherit
+  inactive          '/dev/fedora/root' [46.80 GiB] inherit
+Ah ha! There’s my root partition. It’s just inactive. All I need to do is activate it and exit the emergency shell to continue the boot process:
+
+# lvm lvchange -a y fedora/root
+# exit
+
+Modify /etc/defaults/grub to include the additional volume in the parameters: crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rd.lvm.lv=vg_home/lv_home rhgb quiet
+Reconfigure grub with grub2-mkconfig -o /boot/grub2/grub.cfg
+Reconfigure initramfs with mkinitrd -f -v /boot/initramfs-3.10.0-327.18.2.el7.x86_64.img 3.10.0-327.18.2.el7.x86_64. Note: your values may vary. Use uname -r to get that kernel version. Or just read up on mkinitrd. (Frankly, I don't know why this step is needed, but apparently it is - I tried without it and it didn't work)
+And finally, reinstall grub: grub2-install /dev/sda
+
+
+
+
+
+https://fedoramagazine.org/initramfs-dracut-and-the-dracut-emergency-shell/
