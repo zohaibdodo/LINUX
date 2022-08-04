@@ -5,9 +5,6 @@ First of all set following things on Linux workstation/server
 	• Set DNS
 	• Set Search Domain
 	
-
-
-
 By running Realm discover command it will show the discovery 
 
 #realm -v discover zohaib.lab
