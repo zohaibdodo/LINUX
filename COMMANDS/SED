@@ -4,9 +4,15 @@ https://linuxconfig.org/learning-linux-commands-sed
 cat desire_file | sed "s/Zohaib/Rao/" > outputfrom_sedcommand
 sed 's/Nick/John/g' report.txt > report_new.txt
 
+sed (sed "s/world/fahad" xyz.txt)       #For Replacement of word "World" with "Fahad" only one time
+sed "s/world/zohaib/" xyz.txt > abc.txt # This will redirect changes in new file name abc.txt
+sed -i "s/world/zohaib/" xyz.txt        # Replace original file
+sed "s/osama/akber/1" names.txt         # First occurance
+sed "s/osama/akber/g" names.txt         # To change word globally
+
 Linux command syntax	                             Linux command description
 
-sed 's/Nick/John/g' report.txt                      # Replace every occurrence of Nick with John in report.txt
+sed 's/Nick/John/g' report.txt                      # Replace every occurrence of Nick with John in report.txt / globally
 sed 's/Nick|nick/John/g' report.txt                 # Replace every occurrence of Nick or nick with John.
 sed 's/^/ /' file.txt >file_new.txt                 # Add 8 spaces to the left of a text for pretty printing.
 sed -n '/Of course/,/attention you pay/p' myfile    # Display only one paragraph, starting with “Of course” and ending in “attention you pay”
