@@ -1,13 +1,11 @@
+https://linuxconfig.org/learning-linux-commands-sed
+
+
 cat desire_file | sed "s/Zohaib/Rao/" > outputfrom_sedcommand
 sed 's/Nick/John/g' report.txt > report_new.txt
 
+Linux command syntax	                             Linux command description
 
-
-sed '5!s/ham/cheese/' file.txt	# Replace ham with cheese in file.txt except in the 5th line
-sed '$d' file.txt	            #Delete the last line
-
-
-Linux command syntax	                            # Linux command description
 sed 's/Nick/John/g' report.txt                      # Replace every occurrence of Nick with John in report.txt
 sed 's/Nick|nick/John/g' report.txt                 # Replace every occurrence of Nick or nick with John.
 sed 's/^/ /' file.txt >file_new.txt                 # Add 8 spaces to the left of a text for pretty printing.
@@ -44,175 +42,87 @@ sed -n '/RE/{p;q;}' file.txt                        # Print only the first match
 sed '0,/RE/{//d;}' file.txt                         # Delete only the first match
 sed '0,/RE/s//to_that/' file.txt                    # Change only the first match
 sed 's/^[^,]*,/9999,/' file.csv                     # Change first field to 9999 in a CSV file
-s/^ *\(.*[^ ]\) *$/|\1|/;
-s/" *, */"|/g;                                      # sed script to convert CSV file to bar-separated
-: loop                                              # (works only on some types of CSV, with embedded “s and commas)
-s/| *\([^",|][^,|]*\) *, */|\1|/g;                   
-s/| *, */|\1|/g;
-t loop
-s/ *|/|/g;
-s/| */|/g;
-s/^|\(.*\)|$/\1/; )
-sed ':a;s/\(^\|[^0-9.]\)\([0-9]\+\)\\               # Change numbers from file.txt from 1234.56 form to 1.234.56
-([0-9]\{3\}\)/\1\2,\3/g;ta' file.txt 
+
+# s/^ *\(.*[^ ]\) *$/|\1|/;
+# s/" *, */"|/g;                                      # sed script to convert CSV file to bar-separated
+# : loop                                              # (works only on some types of CSV, with embedded “s and commas)
+# s/| *\([^",|][^,|]*\) *, */|\1|/g;                   
+# s/| *, */|\1|/g;
+# t loop
+# s/ *|/|/g;
+# s/| */|/g;
+# s/^|\(.*\)|$/\1/;
+
+sed ':a;s/\(^\|[^0-9.]\)\([0-9]\+\)\\                
+([0-9]\{3\}\)/\1\2,\3/g;ta' file.txt                 # Change numbers from file.txt from 1234.56 form to 1.234.56   
 sed -r "s/\<(reg|exp)[a-z]+/\U&/g"                   # Convert any word starting with reg or exp to uppercase
-sed '1,20 s/Johnson/White/g' file.txt                # Do replacement of Johnson with White only on
-
-lines between 1 and 20
-
-sed '1,20 !s/Johnson/White/g' file.txt
-The above reversed (match all except lines 1-20)
+sed '1,20 s/Johnson/White/g' file.txt                # Do replacement of Johnson with White only on lines between 1 and 20
+sed '1,20 !s/Johnson/White/g' file.txt               # The above reversed (match all except lines 1-20)
 sed '/from/,/until/ { s/\<red\>/magenta/g; \
-s/\<blue\>/cyan/g; }' file.txt
-Replace only between “from” and “until”
+s/\<blue\>/cyan/g; }' file.txt                       # Replace only between “from” and “until”
 sed '/ENDNOTES:/,$ { s/Schaff/Herzog/g; \
-s/Kraft/Ebbing/g; }' file.txt
-Replace only from the word “ENDNOTES:” until EOF
-sed '/./{H;$!d;};x;/regex/!d' file.txt
-Print paragraphs only if they contain regex
+s/Kraft/Ebbing/g; }' file.txt                        # Replace only from the word “ENDNOTES:” until EOF
+sed '/./{H;$!d;};x;/regex/!d' file.txt               # Print paragraphs only if they contain regex
  sed -e '/./{H;$!d;}' -e 'x;/RE1/!d;\
-/RE2/!d;/RE3/!d' file.txt
-Print paragraphs only if they contain RE1,
-
-RE2 and RE3
-
- sed ':a; /\\$/N; s/\\\n//; ta' file.txt
-Join two lines in the first ends in a backslash
-
- sed 's/14"/fourteen inches/g' file.txt
-This is how you can use double quotes
-
- sed 's/\/some\/UNIX\/path/\/a\/new\\
-/path/g' file.txt
-Working with Unix paths
-
- sed 's/[a-g]//g' file.txt
-Remove all characters from a to g from file.txt
-
-sed 's/\(.*\)foo/\1bar/' file.txt
-Replace only the last match of foo with bar
-sed '1!G;h;$!d' 
-A tac replacement
+/RE2/!d;/RE3/!d' file.txt                            # Print paragraphs only if they contain RE1,RE2 and RE3
+sed ':a; /\\$/N; s/\\\n//; ta' file.txt              # Join two lines in the first ends in a backslash
+sed 's/14"/fourteen inches/g' file.txt               # This is how you can use double quotes
+sed 's/\/some\/UNIX\/path/\/a\/new\\
+/path/g' file.txt                                    # Working with Unix paths
+sed 's/[a-g]//g' file.txt                            # Remove all characters from a to g from file.txt
+sed 's/\(.*\)foo/\1bar/' file.txt                    # Replace only the last match of foo with bar
+sed '1!G;h;$!d'                                      # A tac replacement
 sed '/\n/!G;s/\(.\)\(.*\n\)/&\2\1\
-/;//D;s/.//'
-A rev replacement
-sed 10q file.txt
-A head replacement
+/;//D;s/.//'                                         # A rev replacement
+sed 10q file.txt                                     # A head replacement
 sed -e :a -e '$q;N;11,$D;ba' \
-file.txt
-A tail replacement
+file.txt                                             # A tail replacement
 sed '$!N; /^\(.*\)\n\1$/!P; D' \
-file.txt
-A uniq replacement
+file.txt                                             # A uniq replacement
 sed '$!N; s/^\(.*\)\n\1$/\1/;\
- t; D' file.txt
-The opposite (or uniq -d equivalent)
-sed '$!N;$!D' file.txt
-Equivalent to tail -n 2
-sed -n '$p' file.txt
+ t; D' file.txt                                      # The opposite (or uniq -d equivalent)
+sed '$!N;$!D' file.txt                               # Equivalent to tail -n 2
+sed -n '$p' file.txt                
 … tail -n 1 (or tail -1)
-sed '/regexp/!d' file.txt
-grep equivalent
-sed -n '/regexp/{g;1!p;};h' file.txt
-Print the line before the one matching regexp, but
-
-not the one containing the regexp
-
-sed -n '/regexp/{n;p;}' file.txt
-Print the line after the one matching the regexp, but
-not the one containing the regexp
-
-sed '/pattern/d' file.txt
-Delete lines matching pattern
-sed '/./!d' file.txt
-Delete all blank lines from a file
-sed '/^$/N;/\n$/N;//D' file.txt
-Delete all consecutive blank lines
-
-except for the first two
-
-sed -n '/^$/{p;h;};/./{x;/./p;}'\
- file.txt
-Delete the last line of each paragraph
-sed 's/.\x08//g' file
-Remove nroff overstrikes
-sed '/^$/q'
-Get mail header
-sed '1,/^$/d'
-Get mail body
-sed '/^Subject: */!d; s///;q'
-Get mail subject
-sed 's/^/> /'
-Quote mail message by inserting a
-
-“> ” in front of every line
-
-sed 's/^> //'
-The opposite (unquote mail message)
-sed -e :a -e 's/<[^>]*>//g;/</N;//ba'
-Remove HTML tags
-sed '/./{H;d;};x;s/\n/={NL}=/g'\
- file.txt | sort \
-| sed '1s/={NL}=//;s/={NL}=/\n/g'
-Sort paragraphs of file.txt alphabetically
-sed 's@/usr/bin@&/local@g' path.txt
-Replace /usr/bin with /usr/bin/local in path.txt
-sed 's@^.*$@<<<&>>>@g' path.txt
-Try it and see 🙂
-sed 's/\(\/[^:]*\).*/\1/g' path.txt
-Provided path.txt contains $PATH, this will
-
-echo only the first path on each line
-
-sed 's/\([^:]*\).*/\1/' /etc/passwd
-awk replacement – displays only the users
-
-from the passwd file
-
-echo "Welcome To The Geek Stuff" | sed \
+sed '/regexp/!d' file.txt                            # grep equivalent
+sed -n '/regexp/{g;1!p;};h' file.txt                 # Print the line before the one matching regexp, but not the one containing the regexp
+sed -n '/regexp/{n;p;}' file.txt                     # Print the line after the one matching the regexp, but not the one containing the regexp
+sed '/pattern/d' file.txt                           # Delete lines matching pattern
+sed '/./!d' file.txt                                # Delete all blank lines from a file
+sed '/^$/N;/\n$/N;//D' file.txt                     # Delete all consecutive blank lines except for the first two
+sed -n '/^$/{p;h;};/./{x;/./p;}' file.txt           # Delete the last line of each paragraph
+sed 's/.\x08//g' file                               # Remove nroff overstrikes
+sed '/^$/q'                                         # Get mail header
+sed '1,/^$/d'                                       # Get mail body
+sed '/^Subject: */!d; s///;q'                       # Get mail subject
+sed 's/^/> /'                                       # Quote mail message by inserting a “> ” in front of every line
+sed 's/^> //'                                       # The opposite (unquote mail message)
+sed -e :a -e 's/<[^>]*>//g;/</N;//ba'               # Remove HTML tags
+sed '/./{H;d;};x;s/\n/={NL}=/g' file.txt | sort \    
+| sed '1s/={NL}=//;s/={NL}=/\n/g'                   # Sort paragraphs of file.txt alphabetically
+sed 's@/usr/bin@&/local@g' path.txt                 # Replace /usr/bin with /usr/bin/local in path.txt
+sed 's@^.*$@<<<&>>>@g' path.txt                     # Try it and see 🙂
+sed 's/\(\/[^:]*\).*/\1/g' path.txt                 # Provided path.txt contains $PATH, this will echo only the first path on each line
+sed 's/\([^:]*\).*/\1/' /etc/passwd                 # awk replacement – displays only the users from the passwd file
+echo "Welcome To The Geek Stuff" | sed \            
 's/\(\b[A-Z]\)/\(\1\)/g'
-(W)elcome (T)o (T)he (G)eek (S)tuff
-Self-explanatory
+(W)elcome (T)o (T)he (G)eek (S)tuff                 # Self-explanatory
 sed -e '/^$/,/^END/s/hills/\
-mountains/g' file.txt
-Swap ‘hills’ for ‘mountains’, but only on blocks
-
-of text beginning
-
-with a blank line, and ending with a line beginning
-
-with the three characters ‘END’, inclusive
-
-sed -e '/^#/d' /etc/services | more
-View the services file without the commented lines
+mountains/g' file.txt                               # Swap ‘hills’ for ‘mountains’, but only on blocks of text beginning with a blank line, and ending with a line beginning with the three characters ‘END’, inclusive
+sed -e '/^#/d' /etc/services | more                 # View the services file without the commented lines
 sed '$s@\([^:]*\):\([^:]*\):\([^:]*\
-\)@\3:\2:\1@g' path.txt
-Reverse order of items in the last line of path.txt
+\)@\3:\2:\1@g' path.txt                             # Reverse order of items in the last line of path.txt
 sed -n -e '/regexp/{=;x;1!p;g;$!N;p;D;}'\
- -e h file.txt
-Print 1 line of context before and after the line matching,
-
-with a line number where the matching occurs
-
-sed '/regex/{x;p;x;}' file.txt
-Insert a new line above every line matching regex
-sed '/AAA/!d; /BBB/!d; /CCC/!d' file.txt
-Match AAA, BBB and CCC in any order
-sed '/AAA.*BBB.*CCC/!d' file.txt
-Match AAA, BBB and CCC in that order
-sed -n '/^.\{65\}/p' file.txt
-Print lines 65 chars long or more
-sed -n '/^.\{65\}/!p' file.txt
-Print lines 65 chars long or less
-sed '/regex/G' file.txt
-Insert blank line below every line
-sed '/regex/{x;p;x;G;}' file.txt
-Insert blank line above and below
-sed = file.txt | sed 'N;s/\n/\t/'
-Number lines in file.txt
-sed -e :a -e 's/^.\{1,78\}$/\
- &/;ta' file.txt
-Align text flush right
-sed -e :a -e 's/^.\{1,77\}$/ &/;ta' -e \
-'s/\( *\)\1/\1/' file.txt
-Align text center
+ -e h file.txt                                      # Print 1 line of context before and after the line matching, with a line number where the matching occurs
+sed '/regex/{x;p;x;}' file.txt                      # Insert a new line above every line matching regex
+sed '/AAA/!d; /BBB/!d; /CCC/!d' file.txt            # Match AAA, BBB and CCC in any order
+sed '/AAA.*BBB.*CCC/!d' file.txt                    # Match AAA, BBB and CCC in that order
+sed -n '/^.\{65\}/p' file.txt                       # Print lines 65 chars long or more
+sed -n '/^.\{65\}/!p' file.txt                      # Print lines 65 chars long or less
+sed '/regex/G' file.txt                             # Insert blank line below every line
+sed '/regex/{x;p;x;G;}' file.txt                    # Insert blank line above and below
+sed = file.txt | sed 'N;s/\n/\t/'                   # Number lines in file.txt
+sed -e :a -e 's/^.\{1,78\}$/\                   
+ &/;ta' file.txt                                    # Align text flush right
+sed -e :a -e 's/^.\{1,77\}$/ &/;ta' -e \                             
+'s/\( *\)\1/\1/' file.txt                           # Align text center
