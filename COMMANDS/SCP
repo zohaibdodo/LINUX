@@ -1,3 +1,5 @@
+SCP COMMAND:
+
 scp file_name root@192.168.121.11:/opt
 
 
