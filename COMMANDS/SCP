@@ -1,6 +1,15 @@
+SCP COMMAND:
+
 scp file_name root@192.168.121.11:/opt
 
 
 scp -r /opt root@192.168.121.11:/root   #For recurssive but it will not copy directories to destination
 
 scp -rv /opt/* root@192.168.121.11:/root
+
+
+scp image.tar zohaib@10.21.7.33:/home/zohaib
+
+FOR MULTIPLE DESTINATION:
+
+scp image.tar vagrant@10.21.7.37:/home/vagrant/ vagrant@10.21.7.38:/home/vagrant/
