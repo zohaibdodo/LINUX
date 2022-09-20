@@ -1,0 +1,94 @@
+### Make Permanent DNS Changes on resolv.conf in Linux:
+
+Any changes made manually to the /etc/resolv.conf configuration file are bound to be overwritten upon changes in the network or system reboot.
+
+**echo "nameserver 8.8.8.8" > /etc/resolv.conf**
+
+If you make any changes, like a system reboot, or run the dhclient command the line added above, will disappear.
+
+1) Use Resolvconf framework
+2) Set the name server IP address on your Interface settings
+3) Update the DNS server settings on dhclient.conf
+
+# Use Resolvconf framework:
+
+Resolvconf is a framework for keeping up to date the system’s information about name servers. It sets itself up as the intermediary between programs that supply this information (such as ifup and ifdown, DHCP clients, the PPP daemon and local name servers) and programs that use this information such as DNS caches and resolver libraries).
+On Ubuntu/Debian distros, you can install resolvconf framework by running the command below;
+
+**$sudo apt install resolvconf**
+
+Next, edit the configuration file, /etc/resolvconf/resolv.conf.d/base, and enter your DNS settings. See example setting below;
+
+**sudo vim /etc/resolvconf/resolv.conf.d/base**
+
+domain kifarunix.com
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+Save and exit the configuration file.
+Next, update /etc/resolv.conf file to make permanent DNS changes;
+
+**sudo resolvconf -u**
+
+# Update the DNS server settings on dhclient.conf:
+
+If you are using DHCPd for automatic IP address assignment, edit the /etc/dhcp/dhclient.conf file and add the line; supersede domain-name-servers IP1, IP2;. Replace IP1 and IP2 with your respective name server IP addresses;
+
+vim /etc/dhcp/dhclient.conf
+supersede domain-name-servers 8.8.8.8, 8.8.4.4;
+
+Save the file and exit.
+Now, if you run dhclient, your /etc/resolv.conf will be updated with the name servers defined in the dhclient.conf.
+You can use the prepend option instead of supersede to add additional IP addresses to the default one provided by the ISP.
+
+Consult;
+man dhclient.conf
+
+# Set the name server IP address on your Interface settings:
+
+Edit your network interface configuration file and add the address of the name server.
+
+In Ubuntu 18.04/20.04 you would update the Netplan configuration file like;
+
+sudo vim /etc/netplan/01-network-manager-all.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+          wlp0s20f3:
+                  dhcp4: no
+                  addresses: [192.168.100.80/24]
+                  gateway4: 192.168.100.1
+                  nameservers:
+                          addresses: [8.8.8.8]
+We set the DNS to google public DNS server address, 8.8.8.8. It can be different for your case.
+Apply the changes;
+
+**sudo netplan apply**
+
+On Debian and <= Ubuntu 16.04;
+
+vim /etc/network/interfaces
+auto wlp0s20f3
+iface wlp0s20f3 inet static
+    address 192.168.100.80
+    netmask 255.255.255.0
+    dns-nameservers 8.8.8.8
+Restart networking to apply the changes;
+
+**systemctl restart networking**
+
+On CentOS and similar derivatives, edit the interface in question as follows. Replace INTERFACE with your interface name.
+
+**nmcli con mod INTERFACE ipv4.dns 8.8.8.8**
+
+Also, disable network interface management by the NetworkManager daemon.
+
+echo "NM_CONTROLLED=no" >> /etc/sysconfig/network-scripts/ifcfg-INTERFACE
+Apply the changes;
+
+**nmcli con down INTERFACE**
+**nmcli con up INTERFACE**
+
+You should now have static DNS set.
+
+And that concludes our guide on how to make DNS permanent changes on resolv.conf in Linux.
