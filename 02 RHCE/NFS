@@ -25,6 +25,7 @@ To check ports in firewall
 
 /public 192.168.10.11/255.255.255.0(rw)
 /public 192.168.10.11(rw,no_root_squash)
+/public *(rw,no_root_squash)
 
 To verify:
 
@@ -36,7 +37,6 @@ To verify:
 To mount 
 
 #mount 192.168.10.11:/public /mnt 
-
 
 With Directory
 
