@@ -3,7 +3,7 @@
 	2) DNSmasq (DHCP + DNS)
 	3) Bind
 
-DNS Records:
+# DNS Records:
 
 MX (Mail Exchanger):
 
@@ -18,9 +18,9 @@ Example:
 Result:
 hbl.com mail is handled by 0 hbl.com.mail.protection.outlook.com(104.47.5.36)
 
-TXT: (Descriptive text):
+# TXT: (Descriptive text):
 
-Sender Policy Framework
+# Sender Policy Framework
 
 #host -t bankislami.com.pk
 
@@ -29,26 +29,25 @@ vspfl=202.141.255.217 -all
 
 ~ means soft or flexable while receiving mail
 
-Name Server (NS):
+# Name Server (NS):
 
 It is basically DNS of domain and it may be multiple entries.
 
 #host -t NS samba.com.pk
 
-SOA: (Start of Authority)
+# SOA: (Start of Authority)
 
 It is primary server where admin set A records to resolve an IP address to FQDN.
 
-SRN Records: (Service Records)
+# SRN Records: (Service Records)
 
 Previously SLP (Service Location Protocol) it is basically resource records that is used to identify computer that host specific service.
 
-CNAME: (Canonical Records)
+# CNAME: (Canonical Records)
 
 Type of resource record, in which maps one domain name (an alias) to another.
 
-DKIM: (Domain Key)
-
+# DKIM: (Domain Key)
 
 
 
@@ -116,9 +115,9 @@ zone "onwire.pk" in {
 					 type master;
 					 file "onwire.fwd.db";
 					 };
-zone "65.168192.in.addr.arpa" IN {
+zone "65.168.192.in.addr.arpa" IN {
 								  Type master;
 								  file "onwire.rev.db";
 								  to check named configuration
-								  
+								  };
 #named-checkconf	/etc/named.conf
