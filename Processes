@@ -1,0 +1,32 @@
+Processess:
+
+ps 
+ps au
+ps aux 
+ps -f 1
+pgrep firefox
+
+To bring job or a process to background
+
+BACKGROUND PROCESS:
+bg      #Will bring it backgroung
+
+Ctrl + Z to stop then run bg command to bring it background
+
+FOREGROUND PROCESS:
+fg      #Will bring it foregroung
+
+firefox &           #To directly run command in background
+
+TOP Command:
+Shift E   #Will sort Memory units with MiB/GiB/TiB
+Shift M   #Will sort 
+
+TAR COMMAND:
+
+tar -czvf zohaib.tar.gz test        #To compress
+tar -xzvf zohaib.tar.gz             #To extract
+
+ZIP Command:
+zip -r archive testfolder       #-r for recurssive
+
