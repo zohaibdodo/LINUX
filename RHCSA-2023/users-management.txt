@@ -1,0 +1,32 @@
+1. Local Users 	*profiles
+- user ? 
+*Local user vs Centralized/Domain user (Directory Services: AD, eDirctory, RedHat Directory Service, OpenLDAP)
+
+*Login user(BASH) vs system/service account | application user
+
+user: /etc/passwd + sssd -> AD (LDAP database)
+group: /etc/group
+password: /etc/shadow
+
+/home/username ; /home/domainname/username + AutoFS(Roaming Profile)
+/var/spool/mail/....
+
+UID: numeric ID #
+GID: numeric ID
+
+useradd, userdel , usermod
+/etc/default/useradd
+/etc/login.defs
+
+
+
+2. Local Groups (members)
+/etc/group..
+
+3. Password, complexity , aging
+/etc/shadow		P@$$w0rd!@#
+
+4. Users rights -> /etc/sudoers...
+
+
+*. Linux (user authentication with AD)

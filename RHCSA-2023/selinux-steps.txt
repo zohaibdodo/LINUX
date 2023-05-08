@@ -1,0 +1,26 @@
+1. what is SELinux ? (Apparmor-ubuntu/SUSE)
+
+2. SELinux Modes (enforcing/permissive/disabled)
+
+3. What type of security SELinux provides ? demo
+	a. File and Folder <- Processes [httpd_t > httpd_sys_content_t] 
+	b. Netowrk Ports
+	c. Users security
+	d. Booleans (true/false)
+4. Enable SELinux on Production systems
+
+1. disabled => enforcing (reboot required)
+ a. set selinux permissive mode /etc/selinux/config
+ b. empty audit.log
+ c. reboot
+ d. selaert -a /var/log/audit/audit.log - FIX
+ e. empty audit.log # > /var/log/audit/audit.log
+ f. reboot
+ g. sealert -a /var/log/audit/audit.log - Again FIX the alerts
+ h. set selinux enforcing mode , reboot
+
+
+5. Troubleshooting
+
+
+

@@ -1,0 +1,27 @@
+Kernel + netfilter [IPTables / Firewalld]
+
+Zones = default / active
+
+create rule to allow dns and port 53 trafic in zone=home:
+firewall-cmd --zone=home --add-service=dns --permanent
+firewall-cmd --zone=home --add-port=25/tcp --permanent
+
+create rule to allow nfs and port 25 trafic in default zone:
+firewall-cmd --add-service=nfs --permanent
+firewall-cmd --add-port=25/tcp --permanent
+
+Adding custom/rich rules:
+firewall-cmd --permanent --add-rich-rule='rule family=ipv4 source address='192.168.164.100' service name=https accept'
+
+firewall-cmd --permanent --add-rich-rule='rule family=ipv4 source address='192.168.164.100' port protocol=tcp port=8090 accept'
+
+Adding port forward rules:
+firewall-cmd --permanent --zone=zone-name --add-forward-port=port=4422:proto=tcp:toport=22
+
+firewall-cmd --permanent --zone=zone-name --add-forward-port=port=4422:proto=tcp:toport=22:toaddress:192.168.242.100
+
+
+
+
+
+

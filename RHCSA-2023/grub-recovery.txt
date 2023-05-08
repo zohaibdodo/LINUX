@@ -1,0 +1,6 @@
+fdisk –l
+dmesg | grep -Fq "EFI v"
+
+grub2-install /dev/sda
+OR
+yum reinstall grub2-efi shim

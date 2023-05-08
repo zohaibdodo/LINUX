@@ -1,0 +1,23 @@
+1. Logging ? events record (rsyslog + systemd-journald)
+
+2. Log locations [ /var/log/...]  + [/var/log/journal/...]
+
+3. Log files... 
+
+4. Logs configuration
+	a. rsyslog configuration /etc/rsyslog.d/| /etc/rsyslog.conf
+	b. logrotate		/etc/logrotate.d/ | /etc/logrotate.conf
+
+*** remote logging
+
+/etc/systemd/journald.conf Storage=persisitent
+systemd-journald restart
+
+
+5. Log parser (online[message] / offline[journalctl])
+
+* NTP (Client/Server)
+ 
+ 
+
+

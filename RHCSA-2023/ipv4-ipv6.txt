@@ -1,0 +1,29 @@
+IPV4-Decimal (32 bit)			IPv6-Hexa-Decimal (128 bit)
+============				=================
+decimal = 0-9				hexa-decimal = 0-9,A-F
+32bit = 4 part x 8bit			128 bit = 8 part each part 16 bit 
+ex : 192.168.1.1			ex: 2a03:2880:f139:83:face:b00c:0:25de
+. use as a separator			: use as a separator
+==================================================================
+Public=1-223 [A,B,C]			Global unicast=2000-3FFF
+1-126 except 10
+128-191 except 172.16-172.31
+192-223 except 192.168.X.X
+
+Private					Unique Local =fdXX::
+10.X.X.X		A (255x255x255)
+172.16 - 172.31.X.X 	B (65535)
+192.168.X.X		C (255)
+
+Loopback 127.0.0.1/8	 		::1/128 (0000:0000:0000:0000:0000:0000:0000:0001)
+APIPA	 169.254.X.X 	 		Link Local =fe80...	
+ 	
+224-239 D
+240-255 E	
+
+224.... Multicast			ffXX... (Multicast)
+---------------------------------------------
+DHCPv6
+SLAAC(stateless address autoconfiguration)
+
+   

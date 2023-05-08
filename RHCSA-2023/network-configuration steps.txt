@@ -1,0 +1,26 @@
++ IPv4 vs IPv6
+
+- current Network Configuration and Test
+A. Current network interfaces + properties
+# lspci | grep -i ethernet
+# nmcli device status | grep -i ethernet
+# ethtool ens224 | grep Link
+
+B. Current network interfcace IP configuratin etc
+# ip addr show
+# ip -s link show 
+# ip r s 
+# cat /etc/resolv.conf (DNS entries)
+
+
+- Manage Network onfiguration using 
+	a. nmcli
+	b. nmtui
+	c. using vi configuratin file
+
+- Configure server hostname and Test name resolution (DNS).
+
+# hostnamectl set-hostname hostname >> /etc/hostname
+Name Rsolver:
+	Local /etc/hosts
+	DNS: /etc/resolv.conf > nameserver: 8.8.8.8

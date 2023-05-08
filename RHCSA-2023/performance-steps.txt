@@ -1,0 +1,35 @@
+1. Killing process [Send specific signal to process]
+
+* What is process ?  PID, PPID
+* why we kill process ?
+
+# pgrep firefox, pidof firefox, ps -ef | grep firefox,
+# kill -signal# pid
+# pkill -signal# program-name
+# pgrep -l -u username , pkill -u username, pkill -t terminal#
+
+===
+2. Monitoring Process
+# uptime, top, ps -ao pid,comm,%cpu,%mem --sort=-%cpu | head 
+# iotop, iftop
+
+===
+3. Tunning profiles ? Manual Tunning / Auto (ready made profile) 
+# tuned-adm recommend
+# tuned-adm list
+# tuned-adm profile profile-name
+# tuned-adm active
+
+===
+4. influnce process scheduling
+# renice
+# nice
+# ps -axo pid,comm,nice --sort=-nice | head / tail 
+
+Manual Tunnig:
+* disk scheduler  
+* network setting
+* RAM setting
+* CPU governor
+
+

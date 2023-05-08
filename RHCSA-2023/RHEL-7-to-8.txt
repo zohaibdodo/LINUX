@@ -1,0 +1,11 @@
+1. register + attach
+2. yum update
+3. subscription-manager repos --enable rhel-7-server-extras-rpms
+4. yum install leapp
+5. wget https://access.redhat.com/sites/default/files/attachments/leapp-data18.tar.gz (File is avaialable in Telenor Bank Folder)
+6. tar -xf leapp-data18.tar.gz -C /etc/leapp/files
+7. leapp preupgrade / upgrade
+8. check logs in case of any issue /var/log/leapp/leapp-report.txt
+
+====================
+https://access.redhat.com/articles/3664871
