@@ -1,0 +1,31 @@
+Access system: 
+
+ CLI    GUI (GNOME, KDE...)
+
+1. console  [physical,idrac/iLO]; hypervisor access (ctrl + Aalt + F1-F6)
+a. BASH
+b. # , $ + Wheel(can perform root tasks)
+c. command option argument
+
+2. CLI session - remotely (SSH) (Linux / Windows)
+
+3. GUI session - remotely (VNC, RDP)
+
+4. Web based - remotely	(Cockpit)
+
+	a. cockpit + cockpit-ws (RPM)
+	b. systemctl enable --now cockpit.socket
+	c. check IP address 
+	d. check firewall (service=cockpit OR port=9090)
+
+5. create account on redhat (developer)
+6. register + [redhat update server/package server]
+7. support ticket + sos report
+8. Insight (cloud based service)
+
+	
+	1. updates self support	$399 for 1 physical or 2 VMs	x 16
+	2. updates + Support(9x5)	$799  as above
+	3. updates + support(24x7)	$1199 as above
+	4. $4500 VDC (unlimited VMs)
+

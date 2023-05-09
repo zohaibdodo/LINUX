@@ -1,0 +1,30 @@
+1. What is container ? <httpd+lib+bin+configuration files/data file >
+
+2. installing container (#yum install container-tools)
+3. container registries
+	- root => /etc/containers/registries.conf
+	- user => /home/student/.config/containers/registries.conf
+	
+4. Build and pull container Image.
+	- image inspection
+		- A. before download/pull image inspection [skopeo ...docker://...]
+		- B. Localy downloaded/create image inspection [podman ... ...]
+
+5. run container
+	- logs
+	- interactive mode [-it ... /bin/bash]
+	- detach [-d ]
+	- root and rootless container
+
+
+6. run container with storage and with network
+
+	root => /var/lib/containers/storage/
+	USER => /home/student/.local/share/containers/storage/
+	
+7. container as a service
+	- root => /etc/systemd/system/container-app.service
+	- user => /home/username/.config/systemd/user/container-myapp.service
+	service create CLI.
+	1. cd /home/username/.config/systemd/user/
+	2. podman generate systemd --name=myapp --files --new

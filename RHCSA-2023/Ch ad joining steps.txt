@@ -1,0 +1,13 @@
+ update-crypto-policies --show
+ update-crypto-policies --set LEGACY 
+
+ping ad-server-ip
+yum -y install realmd
+realm discover mydomain.com
+realm join mydomain.com
+
+realm permit --all
+OR
+realm permit onwire\\u1 DOMAIN\\u2
+OR
+realm permit --realm adsrv.mydomain.com DOMAIN\\u1 DOMAIN\\u2 OR user@domain.com

@@ -1,0 +1,38 @@
+File and Folers Permission -> read/write/execute -> 
+grantee=user=u/group=g/others=o(everyone)
+
+r=read=		4	
+w=write=	2
+x=execute=	1
+		7
+1. default permission -> umask -> Formula
+
+ls -l 
+getfacl
+
+	File	666	Folder	777
+umask value	022		022
+		644		755
+		ugo/a*		ugo
+		rw-r--r--	rwxr-xr-x
+A. /home/username/.bashrc -> umask 0077 (regular user)
+   /root/.bashrc
+   /etc/bashrc (default)
+
+B. chmod ugo +/- rwx filename
+   chmod 600 filename
+   chmod -R 600 folder
+
+C. Chown / Chgrp
+
+2. Advance Permission
+ - sticky bit
+ - g+s
+ - u+s
+
+3. File Access Control (FACL)
+4. File Attributes
+
+
+
+

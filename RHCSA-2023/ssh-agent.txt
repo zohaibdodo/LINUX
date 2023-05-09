@@ -1,0 +1,2 @@
+.bash_profile
+exec ssh-agent bash

@@ -1,0 +1,16 @@
+1. query package(s)
+2. install (rpm / yum or dnf -> repos -> /etc/yum.repos.d/*.repo )
+3. patch / update --exclude=rpm-name
+4. downgrade / undo / remove
+
+5. register system RHN (developer account)
+6. repository add/remove (3rd party)
+
+7. package group yum grouplist, yum groupinstall 
+
+8. Module Stream
+9. concept of source code compilation
+
+
+
+

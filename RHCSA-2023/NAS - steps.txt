@@ -1,0 +1,41 @@
+NAS vs SAN:
+NAS folder share [NFS,CIFS,webDAV]
+SAN raw volume share [FC,iscsi]
+
+-NFS (folder share)
+ *- NFS server (Linux)  (firewall services: nfs,rpc-bind,mountd)
+ *- NFS client (Linux and Windows)
+
+Linux client for Windows share:
+#smbclient -L //192.168.164.1 -U 'Tayyab Saeed'
+# ###mount -t cifs //192.168.164.1/Win_Share /windata -o username='Tayyab Saeed'
+
+Linux client for NFS share:
+#showmount -e 192.168.164.158
+#mount 192.168.164.158:/profile /mnt/
+
+   - On boot (Linux) - fstab
+========================================
+   - on demand (Linux)
+
+NFS server /profile/imran 
+NFS client /remote/imran
+
+1. yum install autofs
+2. service start and enable autofs
+
+3. create a file named /etc/auto.master.d/home.autofs
+cat /etc/auto.master.d/home.autofs 
+/remote		/etc/auto.home
+
+4. create a file named /etc/auto.home
+cat  /etc/auto.home 
+imran	-fstype=nfs,rw		192.168.164.158:/profile/imran
+OR
+*	-fstype=nfs4,rw		192.168.164.158:/profile/&
+
+
+
+
+
+
