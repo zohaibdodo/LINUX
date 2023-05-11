@@ -1,0 +1,7 @@
+To check disk storage 									
+
+lsscsi
+
+lsblk disk_name
+
+parted diskname print🥰️
