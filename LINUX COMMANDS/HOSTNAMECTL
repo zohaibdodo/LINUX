@@ -1,3 +1,5 @@
- hostnamectl set-hostname "CENTOS" --static
+hostnamectl set-hostname "WORKER1" --static
+
+
 
  
