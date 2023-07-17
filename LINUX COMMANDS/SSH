@@ -7,3 +7,7 @@ ps -aux | grep ssh | grep pts/0
 Kill SSH user
 
 kill -9 <PID>
+
+SSH without Key Authentication:
+
+ssh -o StrictHostKeyChecking=no [DOMAIN_OR_IP]
