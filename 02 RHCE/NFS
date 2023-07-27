@@ -24,7 +24,7 @@ To check ports in firewall
 #vi /etc/exports
 
 /public 192.168.10.11/255.255.255.0(rw)
-/public 192.168.10.11(rw,no_root_squash)
+/public 192.168.10.11(rw,no_root_squash) 		#Clients root will have 
 /public *(rw,no_root_squash)
 
 To verify:
@@ -47,6 +47,6 @@ With Directory
 /private *.domain.com(rw)
 /private server{1..10}.domain.com(rw)
 
-To mount NFS in fstab:
+To mount NFS in fstab:  (It will start service after network device is up while booting so it wont be stuck in boot process)
 
 192.168.122.31:/private /mnt/private nfs4 _netdev,defaults 0 0
