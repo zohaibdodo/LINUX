@@ -1,0 +1,14 @@
+yum groupinstall "Development Tools"
+yum install zlib-devel openssl-devel
+cp /etc/ssh/sshd_config  /etc/ssh/sshd_config.orig
+yum install pam-devel libselinux-devel
+./configure  --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh
+make
+make install
+ssh -V
+
+
+
+https://www.ezeelogin.com/kb/article/how-to-upgrade-openssh-in-centos-331.html
+
+https://www.tecmint.com/install-openssh-server-from-source-in-linux/
