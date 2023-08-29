@@ -16,16 +16,43 @@ gpgcheck=0
 baseurl=file:///media/DVD/AppStream/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 
+Installation steps:
 
 yum groupinstall "Development Tools"
 yum install zlib-devel openssl-devel
 cp /etc/ssh/sshd_config  /etc/ssh/sshd_config.orig
 yum install pam-devel libselinux-devel
-./configure  --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh
+
+wget -c https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.4p1.tar.gz
+tar -xzf openssh-9.4p1.tar.gz
+cd openssh-9.4p1/
+
+./configure  --prefix=/usr --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh
 make
 make install
-ssh -V
 
+
+To verify:
+ssh -V
+/usr/bin/ssh -V
+ 
+ sshd -t
+ 
+chmod 400 /etc/ssh/ssh_host_rsa_key
+chmod 400 /etc/ssh/ssh_host_ecdsa_key
+chmod 400 /etc/ssh/ssh_host_ed25519_key
+
+vim /etc/ssh/sshd_config
+
+Comment below lines on line number 84 & 85
+
+#GSSAPIAuthentication yes
+#GSSAPICleanupCredentials no
+
+
+crontab -e
+
+@reboot /usr/sbin/sshd
 
 
 https://www.ezeelogin.com/kb/article/how-to-upgrade-openssh-in-centos-331.html
