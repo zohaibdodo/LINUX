@@ -107,6 +107,8 @@ systemctl restart httpd
 
 #####
 
+https://www.ssldragon.com/how-to/install-ssl-certificate/ubuntu/
+
 https://aboutssl.org/how-to-convert-cer-to-crt-in-openssl/
 
 DocumentRoot /var/www/html/web

@@ -1,3 +1,22 @@
+vi /etc/yum.repos.d/localrepo.repo
+
+[LocalRepo_BaseOS]
+name=LocalRepo_BaseOS
+metadata_expire=-1
+enabled=1
+gpgcheck=0
+baseurl=file:///media/DVD/BaseOS/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+ 
+[LocalRepo_AppStream]
+name=LocalRepo_AppStream
+metadata_expire=-1
+enabled=1
+gpgcheck=0
+baseurl=file:///media/DVD/AppStream/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+
 yum groupinstall "Development Tools"
 yum install zlib-devel openssl-devel
 cp /etc/ssh/sshd_config  /etc/ssh/sshd_config.orig
