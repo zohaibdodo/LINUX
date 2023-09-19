@@ -1,7 +1,0 @@
-It will stop writing even root on file
-
-chattr +a /etc/fstab
-
-lsattr /etc/fstab
-
-
