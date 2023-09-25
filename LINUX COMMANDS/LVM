@@ -8,7 +8,7 @@
 4) Create LV
 #lvcreate 
 
-##If Disk space of existing LVM is increased and not showing on df -hT or lsblk:
+###If Disk space of existing LVM is increased and not showing on df -hT or lsblk:
 
 fdisk -l -> delete partition "d", create new partition "n", select filesystem type for LVM "8e", then write "w".
 partprobe
@@ -30,7 +30,6 @@ Note:
 
 	• If you have only one VG then there is no need to mention VG name with LV create command.
 	• For VG at least 10% space must be left before creating LV.
-	• 
 	• To create a Snapshot from LVM take 2% of used space before creating Snapshot of LV.
 	• Vgextend command automatically creates PVs so you don’t need to execute command PV create while extending PVs.
 	• You need to execute command resize2fs for EXT(1,2,3,4) or xfs_growfs for XFS

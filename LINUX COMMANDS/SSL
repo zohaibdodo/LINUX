@@ -117,3 +117,9 @@ SSLEngine on
 SSLCertificateFile /etc/ssl/Wildcard-SAMBA-2023.crt
 SSLCertificateKeyFile /etc/ssl/private/wildcard-samba-2023.key
 SSLCertificateChainFile /etc/ssl/CA-Bundle.crt
+
+
+Use DigiCert Utility to export CA Bundle.crt, Wildcard Certificate.crt and privatekey.key
+
+
+rename files as per mentioned in linux machine.

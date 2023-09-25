@@ -27,7 +27,7 @@ wget -c https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.4p1.tar.g
 tar -xzf openssh-9.4p1.tar.gz
 cd openssh-9.4p1/
 
-./configure  --prefix=/usr --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh
+./configure --prefix=/usr --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh
 make
 make install
 
@@ -55,6 +55,6 @@ crontab -e
 @reboot /usr/sbin/sshd
 
 
-https://www.ezeelogin.com/kb/article/how-to-upgrade-openssh-in-centos-331.html
+https://www.ezeelogin.com/kb/article/ho--/w-to-upgrade-openssh-in-centos-331.html
 
 https://www.tecmint.com/install-openssh-server-from-source-in-linux/
