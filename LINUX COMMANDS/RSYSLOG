@@ -1,0 +1,5 @@
+systemctl status rsyslog
+
+vi /etc/rsyslog.conf
+
+*.*     @10.21.24.5:514
