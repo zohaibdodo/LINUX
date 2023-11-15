@@ -1,0 +1,28 @@
+###List all
+firewall-cmd --list-all
+#Which Protocal is open for the service:
+cat /usr/lib/firewalld/services/ssh.xml
+#To add service permanently:
+firewall-cmd --permanent --add-service=https
+firewall-cmd --permanent --add-service={ntp,ftp,ssh}
+#To save from runtime to permanent
+firewall-cmd --runtime-to-permanent
+#Get services:
+firewall-cmd --get-services
+#Remove services:
+firewall-cmd --remove-service=https
+firewall-cmd --reload
+#To create your own service 
+cp /usr/lib/firewalld/services/http.xml /usr/lib/firewalld/services/myservices.xml
+#To add port
+firewall-cmd --permanent --add-port=53/tcp	(DNS PORT)
+firewall-cmd --permanent --add-port=123/udp	(NTP PORT)
+#To show firewall zones:
+firewall-cmd --get-zones
+#To show different zone
+firewall-cmd --list-all --zone=trusted
+#Rich Rule
+firewall-cmd --permanent --zone=trusted --add-rich-rule='rule family=ipv4 source address="192.168.242.1/32" service name=ssh accept'
+#Add Forward Rule:
+
+firewall-cmd --permanent --add-forward-port=port=4422:proto=tcp:toport=22
