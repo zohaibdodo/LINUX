@@ -20,8 +20,8 @@ If boot/grub2/grub.conf is removed, Now it will land on grub mode.
 
 grub>ls
 grub>set root=(hd0,msdos1)
-grub>linux16 /vmlinuz-*
-grub>initrd16 /initramfs-* root=/dev/sda2
+grub>linux16 /vmlinuz-* root=/dev/sda2
+grub>initrd16 /initramfs-* 
 grub>boot
 
 To extract ERRORS:
@@ -36,3 +36,7 @@ inmod lvm
 Now create a new grub file
 
 grub2-mkconfig -o /boot/grub2/grub.conf
+
+To switch target on boot:
+
+Linux16 /vmlinuz-* ..... systemd.unit=graphical.unit
