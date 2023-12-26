@@ -9,4 +9,9 @@ Remove Alias:
 
 #unalias chunari
 
-It will be reset after reboot so you need to 
+It will be reset after reboot so you need to edit bashrc file for permanent entry.
+
+
+nano ~/.bachrc
+
+alias minikube-start="minikube start --vm-driver kvm"
