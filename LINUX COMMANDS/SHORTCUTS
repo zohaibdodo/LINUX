@@ -1,0 +1,7 @@
+Ctrl + c Quit the current interactive process
+Ctrl + d sends an end-of-file character to the current interactive process
+Ctrl + a moves cursor to start of current line
+Ctrl + e moves cursor to end of current line
+Ctrl + r reverse search in history
+Ctrl + l clear screen
+Ctrl + u removes current line
