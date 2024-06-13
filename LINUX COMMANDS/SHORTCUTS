@@ -5,3 +5,5 @@ Ctrl + e moves cursor to end of current line
 Ctrl + r reverse search in history
 Ctrl + l clear screen
 Ctrl + u removes current line
+Alt + b moves cursor one word backward
+Alt + f moves cursor one forward
