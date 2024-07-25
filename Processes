@@ -30,3 +30,5 @@ tar -xzvf zohaib.tar.gz             #To extract
 ZIP Command:
 zip -r archive testfolder       #-r for recurssive
 
+
+|From VSCode Dev
