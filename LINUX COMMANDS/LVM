@@ -42,7 +42,7 @@ Note : Pvmove command is to move current data from existing hard drive to new on
 
 #lvremove
 
-
+LVM SNAPSHOT:
 
 #lvcreate -s -L 200M (2%of disk space) -n root-snap
 
