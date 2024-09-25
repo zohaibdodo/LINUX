@@ -49,3 +49,10 @@ LVM SNAPSHOT:
 To revert :
 
 #lvconvert --merge /dev/rhel/root-snap
+
+
+echo 1 > /sys/class/block/sda/device/rescan
+cfdisk > Select your partition and choose “Resize”. Hit ENTER and confirm the new size. “Write,” type “yes” to confirm, and hit ENTER. Finally, use “q” or select quit.
+pvresize /dev/sda3
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv 
