@@ -56,3 +56,4 @@ cfdisk > Select your partition and choose “Resize”. Hit ENTER and confirm th
 pvresize /dev/sda3
 lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv 
+https://imthiyaz.cloud/easily-extend-disk-space-on-linux-lvm-guide/
