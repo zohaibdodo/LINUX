@@ -31,3 +31,6 @@ Troubleshooting:
 Run command df -Th
 
 If there is any space in the server path, you need to replace it by \040, for example //servername/My\040Documents
+
+Example:
+mount -t cifs -o user=zohaib,pass=JoBHiPassword,domain=abcdef.com '//servername/Folder_Name/' /mnt/Folder_Name/
